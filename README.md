@@ -1,5 +1,8 @@
 # LiqPay Extension for Magento 2
-LiqPay integration extension for Magento 2
+LiqPay payment integration extension for Magento 2
+
+# Idea
+The idea of this repository and contribution is to learn how to create payment integrations for Magento 2. Each and everyone can contribute.
 
 # How to Contribute
 0. Join the Discord [#liqpay-magento2](https://discord.gg/Ukwq3xQ) channel
