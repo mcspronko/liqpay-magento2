@@ -12,3 +12,24 @@ The idea of this repository and contribution is to learn how to create payment i
 4. Implement changes
 5. Create a Pull Request
 6. Assign the Pull Request to @maxpronko
+
+# Installation
+## Composer
+
+Download composer `wget http://getcomposer.org/composer.phar`
+
+Install `php composer.phar require mcspronko/liqpay-magento2`
+
+## Modman
+Download [modman](https://github.com/colinmollenhour/modman) `bash < <(wget -q --no-check-certificate -O - https://raw.github.com/colinmollenhour/modman/master/modman-installer)`
+
+In the Magento 2 directory `modman init`
+
+Clone repository `modman clone git@github.com:mcspronko/liqpay-magento2.git`
+
+
+# Authors
+Max Pronko - [www.maxpronko.com](https://www.maxpronko.com)
+
+# License
+Satisfy is licensed under the MIT License - see the LICENSE file for details
