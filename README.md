@@ -32,4 +32,4 @@ Clone repository `modman clone git@github.com:mcspronko/liqpay-magento2.git`
 Max Pronko - [www.maxpronko.com](https://www.maxpronko.com)
 
 # License
-Satisfy is licensed under the MIT License - see the LICENSE file for details
+LiqPay extension for Magento 2 is licensed under the MIT License - see the LICENSE file for details
