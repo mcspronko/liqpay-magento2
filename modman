@@ -1,3 +1,4 @@
 ./checkout app/code/Pronko/LiqPayCheckout
 ./test app/code/Pronko/LiqPayTest
 ./admin app/code/Pronko/LiqPayAdmin
+./admin app/code/Pronko/LiqPayGateway
