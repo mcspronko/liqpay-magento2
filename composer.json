@@ -4,7 +4,8 @@
   "replace": {
     "pronko/checkout": "self.version",
     "pronko/test": "self.version",
-    "pronko/admin": "self.version"
+    "pronko/admin": "self.version",
+    "pronko/gateway": "self.version"
   },
   "require": {
     "magento/framework": "*"
@@ -15,7 +16,7 @@
   },
   "scripts": {
     "test-coverage": "vendor/bin/phpunit Test --coverage-text=pronko_liqpay_code_coverage_report.txt",
-    "test-phpcs": "vendor/bin/phpcs --standard=Magento2 ./checkout/ ./test/ ./admin/",
+    "test-phpcs": "vendor/bin/phpcs --standard=Magento2 ./checkout/ ./test/ ./admin/ ./gateway/",
     "post-install-cmd": [
       "[ $COMPOSER_DEV_MODE -eq 1 ] && vendor/bin/phpcs --config-set installed_paths ../../magento/magento-coding-standard/"
     ],
@@ -35,12 +36,14 @@
     "files": [
       "checkout/registration.php",
       "test/registration.php",
-      "admin/registration.php"
+      "admin/registration.php",
+      "gateway/registration.php"
     ],
     "psr-4": {
       "Pronko\\LiqPayCheckout\\": "checkout",
       "Pronko\\LiqPayTest\\": "test",
-      "Pronko\\LiqPayAdmin\\": "admin"
+      "Pronko\\LiqPayAdmin\\": "admin",
+      "Pronko\\LiqPayGateway\\": "gateway"
     }
   },
   "repositories": [
