@@ -24,6 +24,12 @@
   },
   "type": "magento2-metapackage",
   "version": "0.1.0",
+  "authors": [
+    {
+      "name": "Pronko Consulting",
+      "homepage": "https://www.pronkoconsulting.com/"
+    }
+  ],
   "autoload": {
     "files": [
       "checkout/registration.php",
