@@ -1,0 +1,43 @@
+{
+  "name": "pronko/liqpay",
+  "description": "LiqPay extension for Magento 2 Metapackage",
+  "replace": {
+    "pronko/checkout": "self.version",
+    "pronko/test": "self.version"
+  },
+  "require": {
+    "magento/framework": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~6.5",
+    "magento/magento-coding-standard": "~2.0"
+  },
+  "scripts": {
+    "test-coverage": "vendor/bin/phpunit Test --coverage-text=pronko_liqpay_code_coverage_report.txt",
+    "test-phpcs": "vendor/bin/phpcs --standard=Magento2 ./checkout/ ./test/",
+    "post-install-cmd": [
+      "[ $COMPOSER_DEV_MODE -eq 1 ] && vendor/bin/phpcs --config-set installed_paths ../../magento/magento-coding-standard/"
+    ],
+    "post-update-cmd": [
+      "[ $COMPOSER_DEV_MODE -eq 1 ] && vendor/bin/phpcs --config-set installed_paths ../../magento/magento-coding-standard/"
+    ]
+  },
+  "type": "magento2-metapackage",
+  "version": "0.1.0",
+  "autoload": {
+    "files": [
+      "checkout/registration.php",
+      "test/registration.php"
+    ],
+    "psr-4": {
+      "Pronko\\LiqPayCheckout\\": "checkout",
+      "Pronko\\LiqPayTest\\": "test"
+    }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://repo.magento.com/"
+    }
+  ]
+}
