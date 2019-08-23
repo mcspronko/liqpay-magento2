@@ -1,1 +1,2 @@
 ./checkout app/code/Pronko/LiqPayCheckout
+./test app/code/Pronko/LiqPayTest
