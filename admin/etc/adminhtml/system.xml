@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Pronko Consulting (https://www.pronkoconsulting.com)
+ * See LICENSE for the license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="payment">
+            <group id="liqpay_section" sortOrder="6" showInDefault="0" showInWebsite="0" showInStore="0">
+                <group id="liqpay" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>LiqPay</label>
+                    <frontend_model>Magento\Paypal\Block\Adminhtml\System\Config\Fieldset\Payment</frontend_model>
+                    <fieldset_css>complex</fieldset_css>
+                    <attribute type="displayIn">other_payment_methods</attribute>
+                    <group id="liqpay_general" translate="label" showInDefault="1" showInWebsite="1" sortOrder="5">
+                        <label>General Settings</label>
+                        <attribute type="expanded">1</attribute>
+                        <frontend_model>Magento\Config\Block\System\Config\Form\Fieldset</frontend_model>
+                        <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                            <label>Enabled</label>
+                            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                            <config_path>payment/liqpay/active</config_path>
+                        </field>
+                        <field id="title" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                            <label>Title</label>
+                            <config_path>payment/liqpay/title</config_path>
+                        </field>
+                        <field id="mode" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                            <label>Mode</label>
+                            <source_model>Pronko\LiqPayAdmin\Model\Config\Source\Mode</source_model>
+                            <config_path>payment/liqpay/mode</config_path>
+                        </field>
+                    </group>
+                    <group id="liqpay_account" translate="label" showInDefault="1" showInWebsite="1" sortOrder="5">
+                        <label>Account Settings</label>
+                        <attribute type="expanded">0</attribute>
+                        <frontend_model>Magento\Config\Block\System\Config\Form\Fieldset</frontend_model>
+                        <field id="heading_sandbox_account_settings" translate="label" sortOrder="170" showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Sandbox Credentials</label>
+                            <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                            <attribute type="shared">1</attribute>
+                        </field>
+                        <field id="sandbox_public_key" translate="label" type="text" sortOrder="175" showInDefault="1" showInWebsite="1" showInStore="1">
+                            <label>Public Key</label>
+                            <config_path>payment/liqpay/account/sandbox/public_key</config_path>
+                        </field>
+                        <field id="sandbox_private_key" translate="label" type="text" sortOrder="180" showInDefault="1" showInWebsite="1" showInStore="1">
+                            <label>Private Key</label>
+                            <config_path>payment/liqpay/account/sandbox/private_key</config_path>
+                        </field>
+                        <field id="heading_production_account_settings" translate="label" sortOrder="185" showInDefault="1" showInWebsite="1" showInStore="0">
+                            <label>Production Credentials</label>
+                            <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                            <attribute type="shared">2</attribute>
+                        </field>
+                        <field id="production_public_key" translate="label" type="text" sortOrder="190" showInDefault="1" showInWebsite="1" showInStore="1">
+                            <label>Public Key</label>
+                            <config_path>payment/liqpay/account/production/public_key</config_path>
+                        </field>
+                        <field id="production_private_key" translate="label" type="text" sortOrder="195" showInDefault="1" showInWebsite="1" showInStore="1">
+                            <label>Private Key</label>
+                            <config_path>payment/liqpay/account/production/private_key</config_path>
+                        </field>
+                    </group>
+                 </group>
+            </group>
+        </section>
+    </system>
+</config>
