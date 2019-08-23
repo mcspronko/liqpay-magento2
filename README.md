@@ -27,9 +27,11 @@ In the Magento 2 directory `modman init`
 
 Clone repository `modman clone git@github.com:mcspronko/liqpay-magento2.git`
 
-
 # Authors
 Max Pronko - [www.maxpronko.com](https://www.maxpronko.com)
+
+# Contributors
+This section is to be updated.
 
 # License
 LiqPay extension for Magento 2 is licensed under the MIT License - see the LICENSE file for details
