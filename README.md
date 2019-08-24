@@ -25,15 +25,28 @@ Install `php composer.phar require mcspronko/liqpay-magento2`
 ## Modman
 Download [modman](https://github.com/colinmollenhour/modman) `bash < <(wget -q --no-check-certificate -O - https://raw.github.com/colinmollenhour/modman/master/modman-installer)`
 
-In the Magento 2 directory `modman init`
+In the Magento 2 directory 
+```bash
+modman init
+```
 
-Clone repository `modman clone git@github.com:mcspronko/liqpay-magento2.git`
+Clone the repository, run the command from Magento 2 root directory: 
+```bash
+modman clone git@github.com:mcspronko/liqpay-magento2.git
+```
+
+In order to update the repository with the changes from remote branch run the command:
+```bash
+modman update liqpay-magento2
+``` 
 
 # Authors
-Max Pronko - [www.maxpronko.com](https://www.maxpronko.com)
+
+* [Max Pronko](https://www.maxpronko.com)
 
 # Contributors
-This section is to be updated.
+
+* Vitaliy Prokopov
 
 # License
 LiqPay extension for Magento 2 is licensed under the MIT License - see the LICENSE file for details
