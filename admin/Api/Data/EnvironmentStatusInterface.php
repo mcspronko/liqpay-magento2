@@ -1,9 +1,8 @@
 <?php
 
+namespace Pronko\LiqPayAdmin\Api\Data;
 
-namespace Pronko\LiqPayAdmin\Model;
-
-interface ModeStatusInterface
+interface EnvironmentStatusInterface
 {
     const PRODUCTION = 'production';
     const SANDBOX = 'sandbox';
