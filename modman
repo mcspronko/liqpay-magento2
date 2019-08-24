@@ -2,3 +2,4 @@
 ./test app/code/Pronko/LiqPayTest
 ./admin app/code/Pronko/LiqPayAdmin
 ./gateway app/code/Pronko/LiqPayGateway
+./regirect app/code/Pronko/LiqPayRedirect
