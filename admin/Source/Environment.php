@@ -5,7 +5,7 @@
  */
 declare(strict_types = 1);
 
-namespace Pronko\LiqPayAdmin\Model\Source;
+namespace Pronko\LiqPayAdmin\Source;
 
 use Magento\Framework\Option\ArrayInterface;
 use Pronko\LiqPayAdmin\Api\Data\EnvironmentStatusInterface;
