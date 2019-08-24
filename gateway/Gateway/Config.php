@@ -19,4 +19,12 @@ class Config
     {
         return '';
     }
+
+    /**
+     * @return string
+     */
+    public function getPublicKey()
+    {
+        return '';
+    }
 }

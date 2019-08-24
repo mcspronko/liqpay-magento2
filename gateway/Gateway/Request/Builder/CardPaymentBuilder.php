@@ -8,6 +8,7 @@ declare(strict_types=1);
 namespace Pronko\LiqPayGateway\Gateway\Request\Builder;
 
 use Magento\Payment\Gateway\Request\BuilderInterface;
+use Pronko\LiqPayGateway\Gateway\Config;
 use Pronko\LiqPaySdk\Api\RequestFieldsInterface as RequestFields;
 use Pronko\LiqPaySdk\Api\VersionInterface;
 
@@ -17,6 +18,20 @@ use Pronko\LiqPaySdk\Api\VersionInterface;
 class CardPaymentBuilder implements BuilderInterface
 {
     /**
+     * @var Config
+     */
+    private $config;
+
+    /**
+     * CardPaymentBuilder constructor.
+     * @param Config $config
+     */
+    public function __construct(Config $config)
+    {
+        $this->config = $config;
+    }
+
+    /**
      * @param array $buildSubject
      * @return array
      */
@@ -25,7 +40,7 @@ class CardPaymentBuilder implements BuilderInterface
         return [
             'data' => [
                 RequestFields::VERSION => VersionInterface::VERSION,
-                RequestFields::PUBLIC_KEY => 'public_key',
+                RequestFields::PUBLIC_KEY => $this->config->getPublicKey(),
                 RequestFields::ACTION => 'pay',
                 RequestFields::AMOUNT => 5,
                 RequestFields::CARD => '4731195301524634',
