@@ -23,15 +23,18 @@ class CardPaymentBuilder implements BuilderInterface
     public function build(array $buildSubject)
     {
         return [
-            RequestFields::VERSION => VersionInterface::VERSION,
-            RequestFields::PUBLIC_KEY => 'public_key',
-            RequestFields::AMOUNT => 5,
-            RequestFields::CARD => '4731195301524634',
-            RequestFields::CARD_CVV => 123,
-            RequestFields::CARD_EXP_MONTH => 12,
-            RequestFields::CARD_EXP_YEAR => 22,
-            RequestFields::CURRENCY => 'USD',
-            RequestFields::DESCRIPTION => 'LiqPay for Magento 2'
+            'data' => [
+                RequestFields::VERSION => VersionInterface::VERSION,
+                RequestFields::PUBLIC_KEY => 'public_key',
+                RequestFields::ACTION => 'pay',
+                RequestFields::AMOUNT => 5,
+                RequestFields::CARD => '4731195301524634',
+                RequestFields::CARD_CVV => 123,
+                RequestFields::CARD_EXP_MONTH => 12,
+                RequestFields::CARD_EXP_YEAR => 22,
+                RequestFields::CURRENCY => 'USD',
+                RequestFields::DESCRIPTION => 'LiqPay for Magento 2'
+            ]
         ];
     }
 }
