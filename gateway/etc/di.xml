@@ -12,6 +12,15 @@
         </arguments>
     </type>
 
+    <type name="Pronko\LiqPayGateway\Gateway\Request\PaymentActionProvider">
+        <arguments>
+            <argument name="config" xsi:type="object">Pronko\LiqPayGateway\Gateway\Config\Config</argument>
+            <argument name="actionMapping" xsi:type="array">
+                <item name="authorize_capture" xsi:type="string">pay</item>
+            </argument>
+        </arguments>
+    </type>
+
     <!-- LiqPay Payment Adapter Virtual Type Configuration -->
     <virtualType name="PronkoLiqPayAdapter" type="Magento\Payment\Model\Method\Adapter">
         <arguments>
