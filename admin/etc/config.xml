@@ -10,6 +10,7 @@
         <payment>
             <pronko_liqpay>
                 <title>LiqPay Payment Method</title>
+                <cctypes>VI,MC</cctypes>
             </pronko_liqpay>
         </payment>
     </default>
