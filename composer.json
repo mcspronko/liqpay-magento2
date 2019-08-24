@@ -1,5 +1,5 @@
 {
-  "name": "pronko/liqpay",
+  "name": "pronko/liqpay-magento2",
   "description": "LiqPay extension for Magento 2 Metapackage",
   "replace": {
     "pronko/checkout": "self.version",
@@ -7,6 +7,7 @@
     "pronko/admin": "self.version",
     "pronko/gateway": "self.version"
   },
+  "license": "MIT",
   "require": {
     "magento/framework": "*"
   },
