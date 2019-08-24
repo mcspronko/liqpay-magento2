@@ -21,6 +21,7 @@ interface RequestFieldsInterface
     const PUBLIC_KEY = 'public_key';
     const ACTION = 'action';
     const AMOUNT = 'amount';
+    const CARD = 'card';
     const CARD_CVV = 'card_cvv';
     const CARD_EXP_MONTH = 'card_exp_month';
     const CARD_EXP_YEAR = 'card_exp_year';
