@@ -11,6 +11,7 @@
             <pronko_liqpay>
                 <title>LiqPay Payment Method</title>
                 <cctypes>VI,MC</cctypes>
+                <allowed_currencies>USD,UAH,RUB,EUR</allowed_currencies>
             </pronko_liqpay>
         </payment>
     </default>
