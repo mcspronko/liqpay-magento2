@@ -29,4 +29,3 @@ interface RequestFieldsInterface
     const DESCRIPTION = 'description';
     const PHONE = 'phone';
 }
-

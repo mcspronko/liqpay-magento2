@@ -11,8 +11,8 @@ use Magento\Framework\Option\ArrayInterface;
 use Pronko\LiqPayAdmin\Api\Data\EnvironmentStatusInterface;
 
 /**
-* Class Environment
-*/
+ * Class Environment
+ */
 class Environment implements ArrayInterface
 {
     /**
