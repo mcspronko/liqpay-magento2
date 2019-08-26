@@ -18,7 +18,8 @@
     }
   },
   "require": {
-    "magento/framework": "*"
+    "magento/framework": "*",
+    "magento/module-payment": "*"
   },
   "require-dev": {
     "phpunit/phpunit": "~6.5",
