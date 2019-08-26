@@ -12,6 +12,14 @@ Check out the [Wiki pages](https://github.com/mcspronko/liqpay-magento2/wiki) fo
 ## About LiqPay
 Liqpay – is a payment system that allows easily send money from Visa or MasterCard cards to virtual account in Liqpay system linked to a mobile phone (cell phone) number. Later on you may send money to other phone numbers, withdraw money from Liqpay system to your card or leave money at your account and use it later.
 
+## Screenshots
+
+Checkout Payment Page
+![Checkout Payment Page](https://raw.githubusercontent.com/mcspronko/liqpay-magento2/master/docs/checkout-payment-page.png)
+
+Configuration Settings
+![Configuration Settings](https://raw.githubusercontent.com/mcspronko/liqpay-magento2/master/docs/admnin-config.png)
+
 # Idea
 The idea of this repository and contribution is to learn how to create payment integrations for Magento 2. Each and everyone can contribute.
 
