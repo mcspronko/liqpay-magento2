@@ -7,5 +7,5 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-    <module name="Pronko_LiqPayWidget" setup_version="0.1.0" active="true"/>
+    <module name="Pronko_LiqPayWidget" setup_version="0.1.0"/>
 </config>
