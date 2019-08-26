@@ -2,6 +2,7 @@
 ./test app/code/Pronko/LiqPayTest
 ./admin app/code/Pronko/LiqPayAdmin
 ./gateway app/code/Pronko/LiqPayGateway
+./card-gateway app/code/Pronko/LiqPayCardGateway
 ./redirect app/code/Pronko/LiqPayRedirect
 ./widget app/code/Pronko/LiqPayWidget
 ./api app/code/Pronko/LiqPayApi
