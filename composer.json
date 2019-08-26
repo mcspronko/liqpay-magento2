@@ -7,6 +7,7 @@
     "pronko/admin": "self.version",
     "pronko/gateway": "self.version",
     "pronko/redirect": "self.version",
+    "pronko/card-admin": "self.version",
     "pronko/card-gateway": "self.version",
     "pronko/widget": "self.version",
     "pronko/api": "self.version"
@@ -43,6 +44,7 @@
       "test/registration.php",
       "admin/registration.php",
       "gateway/registration.php",
+      "card-admin/registration.php",
       "card-gateway/registration.php",
       "redirect/registration.php",
       "widget/registration.php",
@@ -53,6 +55,7 @@
       "Pronko\\LiqPayTest\\": "test",
       "Pronko\\LiqPayAdmin\\": "admin",
       "Pronko\\LiqPayGateway\\": "gateway",
+      "Pronko\\LiqPayCardAdmin\\": "card-admin",
       "Pronko\\LiqPayCardGateway\\": "card-gateway",
       "Pronko\\LiqPayRedirect\\": "redirect",
       "Pronko\\LiqPayWidget\\": "widget",
