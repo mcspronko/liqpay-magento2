@@ -13,6 +13,7 @@
                 <cctypes>VI,MC</cctypes>
                 <allowed_currencies>USD,UAH,RUB,EUR</allowed_currencies>
                 <model>PronkoLiqPayAdapter</model>
+                <can_use_checkout>1</can_use_checkout>
             </pronko_liqpay>
         </payment>
     </default>
