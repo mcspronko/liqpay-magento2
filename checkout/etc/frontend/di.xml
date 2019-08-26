@@ -10,7 +10,7 @@
     <type name="Magento\Payment\Model\CcGenericConfigProvider">
         <arguments>
             <argument name="methodCodes" xsi:type="array">
-                <item name="pronko_liqpay" xsi:type="string">pronko_liqpay</item>
+                <item name="pronko_liqpay" xsi:type="const">Pronko\LiqPayApi\Api\Data\PaymentMethodCodeInterface::CODE</item>
             </argument>
         </arguments>
     </type>

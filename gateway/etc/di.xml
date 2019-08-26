@@ -24,7 +24,7 @@
     <!-- LiqPay Payment Adapter Virtual Type Configuration -->
     <virtualType name="PronkoLiqPayAdapter" type="Magento\Payment\Model\Method\Adapter">
         <arguments>
-            <argument name="code" xsi:type="string">pronko_liqpay</argument>
+            <argument name="code" xsi:type="const">Pronko\LiqPayApi\Api\Data\PaymentMethodCodeInterface::CODE</argument>
             <argument name="formBlockType" xsi:type="string">Magento\Payment\Block\Form\Cc</argument>
             <argument name="infoBlockType" xsi:type="string">PronkoLiqPayConfigurableInfo</argument>
             <argument name="valueHandlerPool" xsi:type="object">PronkoLiqPayValueHandlerPool</argument>
@@ -37,7 +37,7 @@
     <virtualType name="PronkoLiqPayConfigurableInfo" type="Magento\Payment\Block\ConfigurableInfo">
         <arguments>
             <argument name="data" xsi:type="array">
-                <item name="methodCode" xsi:type="string">pronko_liqpay</item>
+                <item name="methodCode" xsi:type="const">Pronko\LiqPayApi\Api\Data\PaymentMethodCodeInterface::CODE</item>
             </argument>
         </arguments>
     </virtualType>
@@ -77,7 +77,7 @@
     <!-- LiqPay Gateway Config -->
     <virtualType name="Pronko\LiqPayGateway\Gateway\Config\Config" type="Magento\Payment\Gateway\Config\Config">
         <arguments>
-            <argument name="methodCode" xsi:type="string">pronko_liqpay</argument>
+            <argument name="methodCode" xsi:type="const">Pronko\LiqPayApi\Api\Data\PaymentMethodCodeInterface::CODE</argument>
         </arguments>
     </virtualType>
 
