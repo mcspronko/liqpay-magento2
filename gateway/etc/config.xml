@@ -10,10 +10,15 @@
         <payment>
             <pronko_liqpay>
                 <title>LiqPay</title>
+                <active>1</active>
+                <payment_action>authorize_capture</payment_action>
                 <cctypes>VI,MC</cctypes>
                 <allowed_currencies>USD,UAH,RUB,EUR</allowed_currencies>
                 <model>PronkoLiqPayAdapter</model>
                 <can_use_checkout>1</can_use_checkout>
+                <is_gateway>1</is_gateway>
+                <can_authorize>1</can_authorize>
+                <can_capture>1</can_capture>
             </pronko_liqpay>
         </payment>
     </default>

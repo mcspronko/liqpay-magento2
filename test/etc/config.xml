@@ -11,6 +11,7 @@
             <pronko_liqpay>
                 <sandbox_public_key />
                 <sandbox_private_key />
+                <mode>sandbox</mode>
             </pronko_liqpay>
         </payment>
     </default>
