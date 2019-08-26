@@ -8,20 +8,14 @@ declare(strict_types=1);
 namespace Pronko\LiqPayGateway\Gateway\Request\Builder;
 
 use Magento\Framework\Serialize\SerializerInterface;
-use Magento\Payment\Gateway\Request\BuilderInterface;
 use Pronko\LiqPayGateway\Gateway\Config;
 use Pronko\LiqPayGateway\Gateway\Request\Encoder;
 
 /**
- * Class SignatureBuilder
+ * Class SignatureFactory
  */
-class SignatureBuilder implements BuilderInterface
+class SignatureFactory
 {
-    /**
-     * @var BuilderInterface
-     */
-    private $builder;
-
     /**
      * @var Encoder
      */
@@ -38,40 +32,31 @@ class SignatureBuilder implements BuilderInterface
     private $config;
 
     /**
-     * SignatureBuilder constructor.
+     * SignatureFactory constructor.
      * @param Encoder $encoder
-     * @param BuilderInterface $builder
      * @param SerializerInterface $serializer
      * @param Config $config
      */
     public function __construct(
         Encoder $encoder,
-        BuilderInterface $builder,
         SerializerInterface $serializer,
         Config $config
     ) {
         $this->encoder = $encoder;
-        $this->builder = $builder;
         $this->serializer = $serializer;
         $this->config = $config;
     }
 
     /**
-     * @param array $buildSubject
-     * @return array
+     * @param array $data
+     * @return string
      */
-    public function build(array $buildSubject)
+    public function create(array $data)
     {
-        $requestParams = $this->builder->build($buildSubject);
-
-        $data = $this->encoder->encode($this->serializer->serialize($requestParams));
+        $data = $this->encoder->encode($this->serializer->serialize($data));
 
         $privateKey = $this->config->getPrivateKey();
 
-        $signature = $this->encoder->encode(sha1($privateKey . $data . $privateKey, 1));
-
-        return [
-            'signature' => $signature
-        ];
+        return $this->encoder->encode(sha1($privateKey . $data . $privateKey, 1));
     }
 }
