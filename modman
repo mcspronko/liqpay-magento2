@@ -4,3 +4,4 @@
 ./gateway app/code/Pronko/LiqPayGateway
 ./redirect app/code/Pronko/LiqPayRedirect
 ./widget app/code/Pronko/LiqPayWidget
+./api app/code/Pronko/LiqPayApi
