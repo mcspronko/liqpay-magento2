@@ -18,7 +18,7 @@ Checkout Payment Page
 ![Checkout Payment Page](https://raw.githubusercontent.com/mcspronko/liqpay-magento2/master/docs/checkout-payment-page.png)
 
 Configuration Settings
-![Configuration Settings](https://raw.githubusercontent.com/mcspronko/liqpay-magento2/master/docs/admnin-config.png)
+![Configuration Settings](https://raw.githubusercontent.com/mcspronko/liqpay-magento2/master/docs/admin-config.png)
 
 # Idea
 The idea of this repository and contribution is to learn how to create payment integrations for Magento 2. Each and everyone can contribute.
