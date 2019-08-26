@@ -9,6 +9,9 @@
     <default>
         <payment>
             <pronko_liqpay>
+                <title>LiqPay</title>
+                <cctypes>VI,MC</cctypes>
+                <allowed_currencies>USD,UAH,RUB,EUR</allowed_currencies>
                 <model>PronkoLiqPayAdapter</model>
             </pronko_liqpay>
         </payment>
