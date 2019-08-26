@@ -6,5 +6,61 @@
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- LiqPay Capture Command Pool Configuration -->
+    <virtualType name="PronkoLiqPayCommandPool" type="Magento\Payment\Gateway\Command\CommandPool">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="capture" xsi:type="string">PronkoLiqPayCaptureCommand</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <!-- LiqPay Request Capture Transaction Builder -->
+    <virtualType name="PronkoLiqPayCaptureTransactionBuilder" type="Pronko\LiqPayGateway\Gateway\Request\RequestBuilder">
+        <arguments>
+            <argument name="builder" xsi:type="object">PronkoLiqPayCaptureBuilderComposite</argument>
+        </arguments>
+    </virtualType>
+
+    <!-- LiqPay Request Capture Transaction Builder Composite -->
+    <virtualType name="PronkoLiqPayCaptureBuilderComposite" type="Magento\Payment\Gateway\Request\BuilderComposite">
+        <arguments>
+            <argument name="builders" xsi:type="array">
+                <item name="cardPayment" xsi:type="string">Pronko\LiqPayCardGateway\Gateway\Request\Builder\CardPaymentBuilder</item>
+                <item name="signature" xsi:type="string">Pronko\LiqPayGateway\Gateway\Request\Builder\SignatureBuilder</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <!-- LiqPay Capture Command -->
+    <!--    <virtualType name="PronkoLiqPayCaptureCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">-->
+    <!--        <arguments>-->
+    <!--            <argument name="requestBuilder" xsi:type="object">PronkoLiqPayCaptureTransactionBuilder</argument>-->
+    <!--            <argument name="transferFactory" xsi:type="object">Pronko\LiqPayGateway\Gateway\Http\TransferFactory</argument>-->
+    <!--            <argument name="client" xsi:type="object">Pronko\LiqPayGateway\Gateway\Http\Client</argument>-->
+    <!--            <argument name="handler" xsi:type="object">PronkoLiqPayCaptureHandler</argument>-->
+    <!--            <argument name="validator" xsi:type="object">PronkoLiqPayResponseValidatorPool</argument>-->
+    <!--        </arguments>-->
+    <!--    </virtualType>-->
+
+    <!--    <virtualType name="PronkoLiqPayResponseValidatorPool" type="Magento\Payment\Gateway\Validator\ValidatorComposite">-->
+    <!--        <arguments>-->
+    <!--            <argument name="validators" xsi:type="array">-->
+    <!--                <item name="general" xsi:type="string">Pronko\LiqPayGateway\Gateway\Validator\GeneralResponseValidator</item>-->
+    <!--                <item name="hash" xsi:type="string">Pronko\LiqPayGateway\Gateway\Validator\TransactionHashResponseValidator</item>-->
+    <!--            </argument>-->
+    <!--        </arguments>-->
+    <!--    </virtualType>-->
+
+
+    <!-- LiqPay Payment Capture Handler-->
+    <!--    <virtualType name="PronkoLiqPayCaptureHandler" type="Magento\Payment\Gateway\Response\HandlerChain">-->
+    <!--        <arguments>-->
+    <!--            <argument name="handlers" xsi:type="array">-->
+    <!--                <item name="payment_details" xsi:type="string">Pronko\LiqPayGateway\Gateway\Response\PaymentDetailsHandler</item>-->
+    <!--                <item name="transaction_details" xsi:type="string">Pronko\LiqPayGateway\Gateway\Response\TransactionAdditionalInfoHandler</item>-->
+    <!--            </argument>-->
+    <!--        </arguments>-->
+    <!--    </virtualType>-->
 
 </config>
