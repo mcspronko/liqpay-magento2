@@ -22,6 +22,7 @@ class Config
     const PRODUCTION_PRIVATE_KEY = 'production_private_key';
     const SANDBOX_PUBLIC_KEY = 'sandbox_public_key';
     const SANDBOX_PRIVATE_KEY = 'sandbox_private_key';
+    const ENVIRONMENT_MODE = 'mode';
     /**#@-*/
 
     /**
@@ -54,9 +55,7 @@ class Config
     public function getPrivateKey($storeId = null): string
     {
         return (string) $this->config->getValue(
-            $this->isSandbox($storeId) ?
-                self::SANDBOX_PRIVATE_KEY :
-                self::PRODUCTION_PRIVATE_KEY,
+            $this->isSandbox($storeId) ? self::SANDBOX_PRIVATE_KEY : self::PRODUCTION_PRIVATE_KEY,
             $storeId
         );
     }
@@ -68,9 +67,7 @@ class Config
     public function getPublicKey($storeId = null): string
     {
         return (string) $this->config->getValue(
-            $this->isSandbox($storeId) ?
-                self::SANDBOX_PUBLIC_KEY :
-                self::PRODUCTION_PUBLIC_KEY,
+            $this->isSandbox($storeId) ? self::SANDBOX_PUBLIC_KEY : self::PRODUCTION_PUBLIC_KEY,
             $storeId
         );
     }
@@ -97,8 +94,8 @@ class Config
      */
     public function isSandbox($storeId = null): bool
     {
-        return (bool) $this->config->getValue(
-            EnvironmentStatusInterface::SANDBOX,
+        return (bool) EnvironmentStatusInterface::SANDBOX === $this->config->getValue(
+            self::ENVIRONMENT_MODE,
             $storeId
         );
     }
