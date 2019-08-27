@@ -94,7 +94,7 @@ class Config
      */
     public function isSandbox($storeId = null): bool
     {
-        return (bool) EnvironmentStatusInterface::SANDBOX === $this->config->getValue(
+        return EnvironmentStatusInterface::SANDBOX === $this->config->getValue(
             self::ENVIRONMENT_MODE,
             $storeId
         );
