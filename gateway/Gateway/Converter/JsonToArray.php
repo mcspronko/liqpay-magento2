@@ -8,11 +8,12 @@ declare(strict_types=1);
 namespace Pronko\LiqPayGateway\Gateway\Converter;
 
 use Magento\Framework\Serialize\SerializerInterface;
+use Magento\Payment\Gateway\Http\ConverterInterface;
 
 /**
  * Class JsonToArray
  */
-class JsonToArray
+class JsonToArray implements ConverterInterface
 {
     /**
      * @var SerializerInterface
@@ -29,11 +30,11 @@ class JsonToArray
     }
 
     /**
-     * @param string $data
-     * @return array
+     * @param string $response
+     * @return array|bool
      */
-    public function convert(string $data): array
+    public function convert($response)
     {
-        return $this->serializer->unserialize($data);
+        return $this->serializer->unserialize($response);
     }
 }

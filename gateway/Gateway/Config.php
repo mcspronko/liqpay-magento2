@@ -8,7 +8,6 @@ declare(strict_types=1);
 namespace Pronko\LiqPayGateway\Gateway;
 
 use Magento\Payment\Gateway\ConfigInterface;
-use Magento\Tests\NamingConvention\true\bool;
 use Pronko\LiqPayApi\Api\Data\EnvironmentStatusInterface;
 
 /**
@@ -31,12 +30,21 @@ class Config
     private $config;
 
     /**
+     * @var string
+     */
+    private $gatewayUrl;
+
+    /**
      * Config constructor.
      * @param ConfigInterface $config
+     * @param string $gatewayUrl
      */
-    public function __construct(ConfigInterface $config)
-    {
+    public function __construct(
+        ConfigInterface $config,
+        $gatewayUrl
+    ) {
         $this->config = $config;
+        $this->gatewayUrl = (string) $gatewayUrl;
     }
 
     /**
@@ -65,6 +73,22 @@ class Config
                 self::PRODUCTION_PUBLIC_KEY,
             $storeId
         );
+    }
+
+    /**
+     * @return string
+     */
+    public function getGatewayUrl(): string
+    {
+        return $this->gatewayUrl;
+    }
+
+    /**
+     * @return array
+     */
+    public function getGatewayHeaders(): array
+    {
+        return [];
     }
 
     /**
