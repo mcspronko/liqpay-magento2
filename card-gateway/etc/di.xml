@@ -35,7 +35,7 @@
     <!-- LiqPay Capture Command -->
     <virtualType name="PronkoLiqPayCaptureCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
         <arguments>
-            <argument name="requestBuilder" xsi:type="object">PronkoLiqPayCaptureTransactionBuilder</argument>
+            <argument name="requestBuilder" xsi:type="object">PronkoLiqPayRequestCaptureBuilderComposite</argument>
             <argument name="transferFactory" xsi:type="object">Pronko\LiqPayGateway\Gateway\Http\TransferFactory</argument>
             <argument name="client" xsi:type="object">Pronko\LiqPayGateway\Gateway\Http\Client</argument>
             <argument name="handler" xsi:type="object">PronkoLiqPayCaptureHandler</argument>

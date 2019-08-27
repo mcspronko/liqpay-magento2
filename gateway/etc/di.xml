@@ -114,7 +114,14 @@
 
     <type name="Pronko\LiqPayGateway\Gateway\Config">
         <arguments>
+            <argument name="config" xsi:type="object">Pronko\LiqPayGateway\Gateway\Config\Config</argument>
             <argument name="gatewayUrl" xsi:type="const">Pronko\LiqPaySdk\Api\ApiUrlInterface::API_URL</argument>
+        </arguments>
+    </type>
+
+    <type name="Pronko\LiqPayGateway\Gateway\Http\TransferFactory">
+        <arguments>
+            <argument name="converter" xsi:type="object">Pronko\LiqPayGateway\Gateway\Converter\ArrayToJson</argument>
         </arguments>
     </type>
 </config>
