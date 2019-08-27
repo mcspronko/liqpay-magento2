@@ -46,7 +46,7 @@ class RequestBuilder implements BuilderInterface
         $data = $this->builder->build($buildSubject);
 
         return [
-            'data' => $data,
+            'data' => base64_encode(json_encode($data)),
             'signature' => $this->signatureFactory->create($data),
         ];
     }
