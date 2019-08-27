@@ -17,11 +17,15 @@ Liqpay – is a payment system that allows easily send money from Visa or Master
 
 ## Screenshots
 
-Checkout Payment Page
+### Checkout Payment Page
 ![Checkout Payment Page](https://raw.githubusercontent.com/mcspronko/liqpay-magento2/master/docs/checkout-payment-page.png)
 
-Configuration Settings
+### Configuration Settings
 ![Configuration Settings](https://raw.githubusercontent.com/mcspronko/liqpay-magento2/master/docs/admin-config.png)
+
+### Order Transaction Details Page
+![Order Transaction Details Page](https://raw.githubusercontent.com/mcspronko/liqpay-magento2/master/docs/order-transaction-details.png)
+
 
 # How to Contribute
 0. Join the Discord [#liqpay-magento2](https://discord.gg/Ukwq3xQ) channel
