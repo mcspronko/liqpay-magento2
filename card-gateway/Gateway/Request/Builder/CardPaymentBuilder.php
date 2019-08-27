@@ -5,7 +5,7 @@
  */
 declare(strict_types=1);
 
-namespace Pronko\LiqPayGateway\Gateway\Request\Builder;
+namespace Pronko\LiqPayCardGateway\Gateway\Request\Builder;
 
 use Magento\Payment\Gateway\Data\OrderAdapterInterface;
 use Magento\Payment\Gateway\Request\BuilderInterface;
