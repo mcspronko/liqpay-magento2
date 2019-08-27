@@ -61,7 +61,7 @@ class TransferFactory implements TransferFactoryInterface
         return $this->transferBuilder
             ->setUri($this->config->getGatewayUrl() . ApiUrlInterface::REQUEST_ENDPOINT_PATH)
             ->setMethod('POST')
-            ->setBody($this->converter->convert($request))
+            ->setBody(http_build_query($request))
             ->setHeaders($this->config->getGatewayHeaders())
             ->build();
     }
