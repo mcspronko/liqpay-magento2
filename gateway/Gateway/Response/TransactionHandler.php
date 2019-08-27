@@ -50,7 +50,7 @@ class TransactionHandler implements HandlerInterface
         foreach ($this->additionalInformation as $responseKey) {
             if (isset($response[$responseKey])) {
                 $payment->setTransactionAdditionalInfo($responseKey, $response[$responseKey]);
-                $rawDetails[$responseKey] = $responseKey[$responseKey];
+                $rawDetails[$responseKey] = $response[$responseKey];
             }
         }
 
