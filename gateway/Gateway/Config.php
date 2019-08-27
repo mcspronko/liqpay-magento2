@@ -9,7 +9,7 @@ namespace Pronko\LiqPayGateway\Gateway;
 
 use Magento\Payment\Gateway\ConfigInterface;
 use Magento\Tests\NamingConvention\true\bool;
-use Pronko\LiqPayAdmin\Api\Data\EnvironmentStatusInterface;
+use Pronko\LiqPayApi\Api\Data\EnvironmentStatusInterface;
 
 /**
  * Class Config

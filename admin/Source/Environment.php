@@ -8,7 +8,7 @@ declare(strict_types = 1);
 namespace Pronko\LiqPayAdmin\Source;
 
 use Magento\Framework\Option\ArrayInterface;
-use Pronko\LiqPayAdmin\Api\Data\EnvironmentStatusInterface;
+use Pronko\LiqPayApi\Api\Data\EnvironmentStatusInterface;
 
 /**
  * Class Environment
