@@ -44,7 +44,7 @@ $quote->setStoreId(
 )->setPasswordHash(
     $accountManagement->getPasswordHash('password')
 )->setReservedOrderId(
-    'test_liqpay_order_1'
+    'test_liqpay_order_3'
 )->setCustomerEmail(
     'aaa@aaa.com'
 )->addProduct(

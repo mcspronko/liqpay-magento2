@@ -9,7 +9,7 @@ namespace Pronko\LiqPayGateway\Gateway\Response;
 
 use Magento\Payment\Gateway\Response\HandlerInterface;
 use Magento\Payment\Model\InfoInterface;
-use Pronko\LiqPayApi\Api\ResponseFieldsInterface;
+use Pronko\LiqPaySdk\Api\ResponseFieldsInterface;
 
 /**
  * Class PaymentHandler

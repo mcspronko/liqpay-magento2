@@ -73,7 +73,7 @@ class PayRequestTest extends TestCase
     public function testExecute()
     {
         /** @var Quote $quote */
-        $quote = $this->getQuote('test_liqpay_order_1');
+        $quote = $this->getQuote('test_liqpay_order_3');
 
         /** @var $session CheckoutSession */
         $checkoutSession = $this->objectManager->get(CheckoutSession::class);
