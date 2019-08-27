@@ -10,7 +10,7 @@ namespace Pronko\LiqPayGateway\Gateway\Response;
 use Magento\Payment\Gateway\Response\HandlerInterface;
 use Magento\Payment\Model\InfoInterface;
 use Magento\Sales\Model\Order\Payment;
-use Pronko\LiqPayApi\Api\ResponseFieldsInterface;
+use Pronko\LiqPaySdk\Api\ResponseFieldsInterface;
 
 /**
  * Class TransactionHandler
@@ -48,9 +48,9 @@ class TransactionHandler implements HandlerInterface
         $payment->setTransactionId($transactionId);
 
         foreach ($this->additionalInformation as $responseKey) {
-            if (isset($transactionResponse[$responseKey])) {
+            if (isset($response[$responseKey])) {
                 $payment->setTransactionAdditionalInfo($responseKey, $response[$responseKey]);
-                $rawDetails[$responseKey] = $responseKey[$responseKey];
+                $rawDetails[$responseKey] = $response[$responseKey];
             }
         }
 

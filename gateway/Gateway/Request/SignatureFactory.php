@@ -52,10 +52,11 @@ class SignatureFactory
      */
     public function create(array $data)
     {
-        $data = $this->encoder->encode($this->serializer->serialize($data));
+        $data = base64_encode(json_encode($data)); //$this->encoder->encode($this->serializer->serialize($data));
 
         $privateKey = $this->config->getPrivateKey();
 
-        return $this->encoder->encode(sha1($privateKey . $data . $privateKey, true));
+        return base64_encode(sha1($privateKey . $data . $privateKey, true));
+//        return $this->encoder->encode(sha1($privateKey . $data . $privateKey, true));
     }
 }

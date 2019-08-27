@@ -98,12 +98,12 @@
     </virtualType>
 
     <!-- LiqPay HTTP Client -->
-    <virtualType name="Pronko\LiqPayGateway\Gateway\Http\Client" type="Magento\Payment\Gateway\Http\Client\Zend">
+    <type name="Pronko\LiqPayGateway\Gateway\Http\Client">
         <arguments>
             <argument name="logger" xsi:type="object">PronkoLiqPayLogger</argument>
             <argument name="converter" xsi:type="object">Pronko\LiqPayGateway\Gateway\Converter\JsonToArray</argument>
         </arguments>
-    </virtualType>
+    </type>
 
     <!-- LiqPay Payment Method Logger -->
     <virtualType name="PronkoLiqPayLogger" type="Magento\Payment\Model\Method\Logger">

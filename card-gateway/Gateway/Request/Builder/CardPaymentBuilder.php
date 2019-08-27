@@ -25,13 +25,14 @@ class CardPaymentBuilder implements BuilderInterface
         /** @var OrderAdapterInterface $order */
         $order = $buildSubject['payment']->getOrder();
         return [
-            RequestFields::CARD => '4731195301524634',
-            RequestFields::CARD_CVV => 123,
-            RequestFields::CARD_EXP_MONTH => 12,
+            RequestFields::CARD => '4242424242424242',
+            RequestFields::CARD_CVV => 111,
+            RequestFields::CARD_EXP_MONTH => 03,
             RequestFields::CARD_EXP_YEAR => 22,
             RequestFields::AMOUNT => $order->getGrandTotalAmount(),
             RequestFields::CURRENCY => $order->getCurrencyCode(),
             RequestFields::PHONE => $this->getPhone($order),
+            'order_id' => $order->getOrderIncrementId()
         ];
     }
 
@@ -41,6 +42,6 @@ class CardPaymentBuilder implements BuilderInterface
      */
     private function getPhone(OrderAdapterInterface $orderAdapter): string
     {
-        return (string) $orderAdapter->getBillingAddress()->getTelephone();
+        return (string) '+380987707070'; //$orderAdapter->getBillingAddress()->getTelephone();
     }
 }
