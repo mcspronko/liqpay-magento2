@@ -4,7 +4,7 @@
  * See LICENSE for the license details.
  */
 
-namespace Pronko\LiqPayApi\Api;
+namespace Pronko\LiqPaySdk\Api;
 
 /**
  * Interface ResponseFieldsInterface
