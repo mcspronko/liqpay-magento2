@@ -5,11 +5,10 @@
  */
 declare(strict_types=1);
 
-namespace Pronko\LiqPayGateway\Gateway\Request\Builder;
+namespace Pronko\LiqPayGateway\Gateway\Request;
 
 use Magento\Framework\Serialize\SerializerInterface;
 use Pronko\LiqPayGateway\Gateway\Config;
-use Pronko\LiqPayGateway\Gateway\Request\Encoder;
 
 /**
  * Class SignatureFactory
@@ -57,6 +56,6 @@ class SignatureFactory
 
         $privateKey = $this->config->getPrivateKey();
 
-        return $this->encoder->encode(sha1($privateKey . $data . $privateKey, 1));
+        return $this->encoder->encode(sha1($privateKey . $data . $privateKey, true));
     }
 }
