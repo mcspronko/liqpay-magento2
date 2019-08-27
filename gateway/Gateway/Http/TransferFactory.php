@@ -13,6 +13,7 @@ use Magento\Payment\Gateway\Http\TransferFactoryInterface;
 use Magento\Payment\Gateway\Http\TransferInterface;
 use Magento\Payment\Gateway\Http\ConverterException;
 use Pronko\LiqPayGateway\Gateway\Config;
+use Pronko\LiqPaySdk\Api\ApiUrlInterface;
 
 /**
  * Class TransferFactory
@@ -58,7 +59,7 @@ class TransferFactory implements TransferFactoryInterface
     public function create(array $request)
     {
         return $this->transferBuilder
-            ->setUri($this->config->getGatewayUrl())
+            ->setUri($this->config->getGatewayUrl() . ApiUrlInterface::REQUEST_ENDPOINT_PATH)
             ->setMethod('POST')
             ->setBody($this->converter->convert($request))
             ->setHeaders($this->config->getGatewayHeaders())

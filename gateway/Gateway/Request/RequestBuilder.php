@@ -8,7 +8,6 @@ declare(strict_types=1);
 namespace Pronko\LiqPayGateway\Gateway\Request;
 
 use Magento\Payment\Gateway\Request\BuilderInterface;
-use Pronko\LiqPayGateway\Gateway\Request\Builder\SignatureFactory;
 
 /**
  * Class RequestBuilder
