@@ -18,22 +18,6 @@ use Pronko\LiqPaySdk\Api\ResponseFieldsInterface;
 class TransactionHandler implements HandlerInterface
 {
     /**
-     * @var array
-     */
-    private $additionalInformation = [
-        ResponseFieldsInterface::ACQUIRER_ID,
-        ResponseFieldsInterface::ACTION,
-        ResponseFieldsInterface::PAYMENT_ID,
-        ResponseFieldsInterface::VERSION,
-        ResponseFieldsInterface::PAY_TYPE,
-        ResponseFieldsInterface::ORDER_ID,
-        ResponseFieldsInterface::LIQPAY_ORDER_ID,
-        ResponseFieldsInterface::PUBLIC_KEY,
-        ResponseFieldsInterface::CARD_TOKEN,
-        ResponseFieldsInterface::TRANSACTION_ID,
-    ];
-
-    /**
      * @inheritdoc
      */
     public function handle(array $handlingSubject, array $response)
@@ -47,11 +31,9 @@ class TransactionHandler implements HandlerInterface
         $payment->setLastTransId($transactionId);
         $payment->setTransactionId($transactionId);
 
-        foreach ($this->additionalInformation as $responseKey) {
-            if (isset($response[$responseKey])) {
-                $payment->setTransactionAdditionalInfo($responseKey, $response[$responseKey]);
-                $rawDetails[$responseKey] = $response[$responseKey];
-            }
+        foreach ($response as $key => $value) {
+            $payment->setTransactionAdditionalInfo($key, $value);
+            $rawDetails[$key] = $value;
         }
 
         $payment->setTransactionAdditionalInfo('raw_details_info', $rawDetails);
