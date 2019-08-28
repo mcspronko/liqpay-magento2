@@ -21,7 +21,7 @@ class Info
      * @var array
      */
     private $labels = [
-        ResponseFieldsInterface::SENDER_CARD_MASK => 'Card Number (Hidden)',
+        ResponseFieldsInterface::SENDER_CARD_MASK => 'Card Number',
         ResponseFieldsInterface::SENDER_CARD_TYPE => 'Type',
     ];
 
