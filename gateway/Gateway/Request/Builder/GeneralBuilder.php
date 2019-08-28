@@ -37,7 +37,6 @@ class GeneralBuilder implements BuilderInterface
         Config $config,
         PaymentActionProvider $actionProvider
     ) {
-
         $this->config = $config;
         $this->actionProvider = $actionProvider;
     }
