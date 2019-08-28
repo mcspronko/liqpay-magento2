@@ -16,7 +16,7 @@ $customerRegistry = $objectManager->get(CustomerRegistry::class);
 /** @var Magento\Customer\Model\Customer $customer */
 $customer->setWebsiteId(1)
     ->setId(1)
-    ->setEmail('customer@example.com')
+    ->setEmail('testliqpaycustomer@example.com')
     ->setPassword('password')
     ->setGroupId(1)
     ->setStoreId(1)

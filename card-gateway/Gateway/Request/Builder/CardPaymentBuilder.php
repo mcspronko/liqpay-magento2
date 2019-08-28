@@ -32,7 +32,6 @@ class CardPaymentBuilder implements BuilderInterface
             RequestFields::AMOUNT => $order->getGrandTotalAmount(),
             RequestFields::CURRENCY => $order->getCurrencyCode(),
             RequestFields::PHONE => $this->getPhone($order),
-            'order_id' => $order->getOrderIncrementId()
         ];
     }
 

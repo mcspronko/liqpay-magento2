@@ -89,6 +89,22 @@ class Config
     }
 
     /**
+     * @return string
+     */
+    public function getOrderPrefix(): string
+    {
+        return '';
+    }
+
+    /**
+     * @return string
+     */
+    public function getOrderSuffix(): string
+    {
+        return '';
+    }
+
+    /**
      * @param int|null $storeId
      * @return bool
      */

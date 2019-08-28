@@ -5,10 +5,11 @@
  */
 declare(strict_types=1);
 
-namespace Pronko\LiqPayCheckout\Observer;
+namespace Pronko\LiqPayCardGateway\Observer;
 
 use Magento\Framework\Event\Observer;
 use Magento\Payment\Observer\AbstractDataAssignObserver;
+use Pronko\LiqPayCardGateway\Api\Data\CardPaymentInterface;
 
 /**
  * Class DataAssignObserver
@@ -19,10 +20,10 @@ class DataAssignObserver extends AbstractDataAssignObserver
      * @var array
      */
     private $ccKeys = [
-        'cc_type',
-        'cc_exp_year',
-        'cc_exp_month',
-        'cc_number'
+        CardPaymentInterface::TYPE,
+        CardPaymentInterface::EXPIRATION_YEAR,
+        CardPaymentInterface::EXPIRATION_MONTH,
+        CardPaymentInterface::NUMBER
     ];
 
     /**
@@ -43,7 +44,5 @@ class DataAssignObserver extends AbstractDataAssignObserver
                 );
             }
         }
-
-        $paymentInfo->getAdditionalInformation();
     }
 }

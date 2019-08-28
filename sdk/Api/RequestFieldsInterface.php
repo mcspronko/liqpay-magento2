@@ -28,4 +28,5 @@ interface RequestFieldsInterface
     const CURRENCY = 'currency';
     const DESCRIPTION = 'description';
     const PHONE = 'phone';
+    const ORDER_ID = 'order_id';
 }
