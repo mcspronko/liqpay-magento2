@@ -10,9 +10,9 @@ define([], function () {
          * @return {component: string, type: string}
          */
         getComponent: function (connectionTypes) {
-            let connectionType = this.getConnectionType();
+            var connectionType = this.getConnectionType();
 
-            let component = {
+            var component = {
                 type: 'pronko_liqpay',
                 component: connectionTypes[connectionType]
             };
