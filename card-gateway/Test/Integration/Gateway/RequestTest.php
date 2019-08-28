@@ -25,9 +25,9 @@ use Pronko\LiqPaySdk\Api\ResponseFieldsInterface;
 use Pronko\LiqPayGateway\Gateway\Config;
 
 /**
- * Class PayRequestTest
+ * Class RequestTest
  */
-class PayRequestTest extends TestCase
+class RequestTest extends TestCase
 {
     /**
      * @var ObjectManagerInterface
@@ -72,7 +72,44 @@ class PayRequestTest extends TestCase
      * @magentoConfigFixture current_store payment/pronko_liqpay/payment_action authorize_capture
      * @magentoDataFixture ../../../../app/code/Pronko/LiqPayCardGateway/Test/Integration/_files/quote_with_liqpay_payment.php
      */
-    public function testExecute()
+    public function testExecutePay()
+    {
+        $customerEmail = 'testliqpaycustomer@example.com';
+
+        $cartId = $this->getCartId($customerEmail);
+
+        /** @var GuestCartManagementInterface $cartManagement */
+        $cartManagement = $this->objectManager->get(GuestCartManagementInterface::class);
+        $orderId = $cartManagement->placeOrder($cartId);
+        /** @var OrderInterface $order */
+        $order = $this->objectManager->get(OrderRepository::class)->get($orderId);
+
+        $payment = $order->getPayment();
+
+        $this->assertEquals(Order::STATE_PROCESSING, $order->getStatus());
+        $this->assertEquals(Order::STATE_PROCESSING, $order->getState());
+
+        $this->assertEquals(PaymentMethodCodeInterface::CODE, $payment->getMethod());
+
+        $paymentInfo = $payment->getAdditionalInformation();
+
+        $this->assertArrayHasKey(ResponseFieldsInterface::ACQUIRER_ID, $paymentInfo);
+        $this->assertArrayHasKey(ResponseFieldsInterface::ORDER_ID, $paymentInfo);
+        $this->assertArrayHasKey(ResponseFieldsInterface::LIQPAY_ORDER_ID, $paymentInfo);
+        $this->assertArrayHasKey(ResponseFieldsInterface::ACTION, $paymentInfo);
+        $this->assertEquals("LiqPay payment method under test", $paymentInfo['method_title']);
+    }
+
+
+    /**
+     * @magentoAppArea frontend
+     * @magentoAppIsolation enabled
+     * @magentoConfigFixture current_store payment/pronko_liqpay/title LiqPay payment method under test
+     * @magentoConfigFixture current_store payment/pronko_liqpay/mode sandbox
+     * @magentoConfigFixture current_store payment/pronko_liqpay/payment_action authorize
+     * @magentoDataFixture ../../../../app/code/Pronko/LiqPayCardGateway/Test/Integration/_files/quote_with_liqpay_payment.php
+     */
+    public function testExecuteAuth()
     {
         $customerEmail = 'testliqpaycustomer@example.com';
 
