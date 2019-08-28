@@ -21,11 +21,13 @@ class Info
      * @var array
      */
     private $labels = [
+        ResponseFieldsInterface::SENDER_CARD_MASK => 'Card Number',
+        ResponseFieldsInterface::PAY_TYPE => 'Payment Type',
+        ResponseFieldsInterface::SENDER_CARD_TYPE => 'Type',
+        ResponseFieldsInterface::SENDER_CARD_BANK => 'Bank',
         ResponseFieldsInterface::ACQUIRER_ID => 'Acquirer ID',
         ResponseFieldsInterface::PAYMENT_ID => 'Payment ID',
         ResponseFieldsInterface::LIQPAY_ORDER_ID => 'LiqPay Order ID',
-        ResponseFieldsInterface::PAY_TYPE => 'Payment Type',
-        ResponseFieldsInterface::SENDER_CARD_BANK => 'Bank',
     ];
 
     /**
