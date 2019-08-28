@@ -17,6 +17,7 @@
             <argument name="config" xsi:type="object">Pronko\LiqPayGateway\Gateway\Config\Config</argument>
             <argument name="actionMapping" xsi:type="array">
                 <item name="authorize_capture" xsi:type="string">pay</item>
+                <item name="authorize" xsi:type="string">auth</item>
             </argument>
         </arguments>
     </type>

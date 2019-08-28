@@ -32,7 +32,7 @@ $quote->setStoreId(
 )->setIsActive(
     true
 )->setIsMultiShipping(
-    false
+    0
 )->assignCustomerWithAddressChange(
     $customer
 )->setShippingAddress(
@@ -44,9 +44,9 @@ $quote->setStoreId(
 )->setPasswordHash(
     $accountManagement->getPasswordHash('password')
 )->setReservedOrderId(
-    'test_liqpay_order_3'
+    'test_liqpay_' . time()
 )->setCustomerEmail(
-    'aaa@aaa.com'
+    'testliqpaycustomer@example.com'
 )->addProduct(
     $product->load($product->getId()),
     2
