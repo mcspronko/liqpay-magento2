@@ -8,8 +8,9 @@ declare(strict_types=1);
 namespace Pronko\LiqPayCardGateway\Api\Data;
 
 /**
-* Interface CardPaymentInterface
-*/
+ * Interface CardPaymentInterface
+ * @api
+ */
 interface CardPaymentInterface
 {
     const TYPE = 'cc_type';
