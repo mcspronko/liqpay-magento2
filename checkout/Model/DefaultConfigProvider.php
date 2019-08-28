@@ -8,7 +8,7 @@ declare(strict_types=1);
 namespace Pronko\LiqPayCheckout\Model;
 
 use Magento\Checkout\Model\ConfigProviderInterface;
-use Magento\Payment\Model\Method\Adapter;
+use Magento\Payment\Gateway\ConfigInterface;
 use Pronko\LiqPayApi\Api\Data\PaymentMethodCodeInterface;
 
 /**
@@ -17,18 +17,18 @@ use Pronko\LiqPayApi\Api\Data\PaymentMethodCodeInterface;
 class DefaultConfigProvider implements ConfigProviderInterface
 {
     /**
-     * @var Adapter
+     * @var ConfigInterface
      */
-    private $paymentMethodAdapter;
+    private $config;
 
     /**
      * DefaultConfigProvider constructor.
-     * @param Adapter $paymentAdapter
+     * @param ConfigInterface $config
      */
     public function __construct(
-        Adapter $paymentAdapter
+        ConfigInterface $config
     ) {
-        $this->paymentMethodAdapter = $paymentAdapter;
+        $this->config = $config;
     }
 
     /**
@@ -41,7 +41,7 @@ class DefaultConfigProvider implements ConfigProviderInterface
         return [
             'payment' => [
                 PaymentMethodCodeInterface::CODE => [
-                    'connection_type' => $this->paymentMethodAdapter->getConfigData('connection_type')
+                    'connection_type' => $this->config->getValue('connection_type')
                 ]
             ]
         ];

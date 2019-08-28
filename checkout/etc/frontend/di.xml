@@ -21,4 +21,16 @@
             </argument>
         </arguments>
     </type>
+
+    <!-- LiqPay Payment Configuration -->
+    <virtualType name="PronkoLiqPayPaymentConfig" type="Magento\Payment\Gateway\Config\Config">
+        <arguments>
+            <argument name="methodCode" xsi:type="const">Pronko\LiqPayApi\Api\Data\PaymentMethodCodeInterface::CODE</argument>
+        </arguments>
+    </virtualType>
+    <type name="Pronko\LiqPayCheckout\Model\DefaultConfigProvider">
+        <arguments>
+            <argument name="config" xsi:type="object">PronkoLiqPayPaymentConfig</argument>
+        </arguments>
+    </type>
 </config>

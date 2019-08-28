@@ -125,10 +125,4 @@
             <argument name="converter" xsi:type="object">Pronko\LiqPayGateway\Gateway\Converter\ArrayToJson</argument>
         </arguments>
     </type>
-
-    <type name="Pronko\LiqPayCheckout\Model\DefaultConfigProvider">
-        <arguments>
-            <argument name="paymentAdapter" xsi:type="object">PronkoLiqPayAdapter</argument>
-        </arguments>
-    </type>
 </config>
