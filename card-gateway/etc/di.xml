@@ -39,6 +39,8 @@
         <arguments>
             <argument name="builders" xsi:type="array">
                 <item name="general" xsi:type="string">Pronko\LiqPayGateway\Gateway\Request\Builder\GeneralBuilder</item>
+                <item name="description" xsi:type="string">Pronko\LiqPayGateway\Gateway\Request\Builder\DescriptionBuilder</item>
+                <item name="order" xsi:type="string">Pronko\LiqPayGateway\Gateway\Request\Builder\OrderBuilder</item>
                 <item name="cardPayment" xsi:type="string">Pronko\LiqPayCardGateway\Gateway\Request\Builder\CardPaymentBuilder</item>
             </argument>
         </arguments>
@@ -88,6 +90,8 @@
         <arguments>
             <argument name="builders" xsi:type="array">
                 <item name="general" xsi:type="string">Pronko\LiqPayGateway\Gateway\Request\Builder\GeneralBuilder</item>
+                <item name="description" xsi:type="string">Pronko\LiqPayGateway\Gateway\Request\Builder\DescriptionBuilder</item>
+                <item name="order" xsi:type="string">Pronko\LiqPayGateway\Gateway\Request\Builder\OrderBuilder</item>
                 <item name="cardPayment" xsi:type="string">Pronko\LiqPayCardGateway\Gateway\Request\Builder\CardPaymentBuilder</item>
             </argument>
         </arguments>

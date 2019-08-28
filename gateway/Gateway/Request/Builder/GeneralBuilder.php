@@ -51,7 +51,6 @@ class GeneralBuilder implements BuilderInterface
             RequestFields::VERSION => VersionInterface::VERSION,
             RequestFields::PUBLIC_KEY => $this->config->getPublicKey(),
             RequestFields::ACTION => $this->actionProvider->getPaymentAction(),
-            RequestFields::DESCRIPTION => 'LiqPay for Magento 2',
         ];
     }
 }
