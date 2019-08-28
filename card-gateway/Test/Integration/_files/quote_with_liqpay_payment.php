@@ -6,12 +6,17 @@
 declare(strict_types=1);
 
 require __DIR__ . '/quote_with_address.php';
-/** @var \Magento\Quote\Model\Quote $quote */
 
-/** @var $rate \Magento\Quote\Model\Quote\Address\Rate */
-$rate = \Magento\TestFramework\Helper\Bootstrap::getObjectManager()->create(
-    \Magento\Quote\Model\Quote\Address\Rate::class
-);
+use Magento\Quote\Model\Quote;
+use Magento\TestFramework\Helper\Bootstrap;
+use Magento\Quote\Model\Quote\Address\Rate;
+use Magento\Quote\Model\QuoteIdMaskFactory;
+use Magento\Quote\Model\QuoteIdMask;
+
+/** @var Quote $quote */
+
+/** @var $rate Rate */
+$rate = Bootstrap::getObjectManager()->create(Rate::class);
 $rate->setCode('freeshipping_freeshipping');
 $rate->getPrice(1);
 
@@ -23,9 +28,9 @@ $quote->collectTotals();
 $quote->save();
 $quote->getPayment()->setMethod('pronko_liqpay');
 
-/** @var \Magento\Quote\Model\QuoteIdMask $quoteIdMask */
-$quoteIdMask = \Magento\TestFramework\Helper\Bootstrap::getObjectManager()
-    ->create(\Magento\Quote\Model\QuoteIdMaskFactory::class)
+/** @var QuoteIdMask $quoteIdMask */
+$quoteIdMask = Bootstrap::getObjectManager()
+    ->create(QuoteIdMaskFactory::class)
     ->create();
 $quoteIdMask->setQuoteId($quote->getId());
 $quoteIdMask->setDataChanges(true);

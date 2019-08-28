@@ -14,13 +14,14 @@ use Magento\Quote\Model\Quote;
 use Magento\Quote\Model\QuoteIdMask;
 use Magento\Quote\Model\QuoteIdMaskFactory;
 use Magento\Sales\Api\Data\OrderInterface;
+use Magento\Sales\Model\Order;
 use Magento\Sales\Model\OrderRepository;
 use PHPUnit\Framework\TestCase;
 use Magento\Framework\ObjectManagerInterface;
 use Magento\TestFramework\Helper\Bootstrap;
 use Magento\Checkout\Model\Session as CheckoutSession;
 use Pronko\LiqPayApi\Api\Data\PaymentMethodCodeInterface;
-use Pronko\LiqPayApi\Api\ResponseFieldsInterface;
+use Pronko\LiqPaySdk\Api\ResponseFieldsInterface;
 use Pronko\LiqPayGateway\Gateway\Config;
 
 /**
@@ -66,23 +67,16 @@ class PayRequestTest extends TestCase
     /**
      * @magentoAppArea frontend
      * @magentoAppIsolation enabled
+     * @magentoConfigFixture current_store payment/pronko_liqpay/title LiqPay payment method under test
      * @magentoConfigFixture current_store payment/pronko_liqpay/mode sandbox
      * @magentoConfigFixture current_store payment/pronko_liqpay/payment_action authorize_capture
      * @magentoDataFixture ../../../../app/code/Pronko/LiqPayCardGateway/Test/Integration/_files/quote_with_liqpay_payment.php
      */
     public function testExecute()
     {
-        /** @var Quote $quote */
-        $quote = $this->getQuote('test_liqpay_order_3');
+        $customerEmail = 'testliqpaycustomer@example.com';
 
-        /** @var $session CheckoutSession */
-        $checkoutSession = $this->objectManager->get(CheckoutSession::class);
-        $checkoutSession->setQuoteId($quote->getId());
-
-        /** @var QuoteIdMask $quoteIdMask */
-        $quoteIdMask = $this->quoteIdMaskFactory->create();
-        $quoteIdMask->load($quote->getId(), 'quote_id');
-        $cartId = $quoteIdMask->getMaskedId();
+        $cartId = $this->getCartId($customerEmail);
 
         /** @var GuestCartManagementInterface $cartManagement */
         $cartManagement = $this->objectManager->get(GuestCartManagementInterface::class);
@@ -92,27 +86,48 @@ class PayRequestTest extends TestCase
 
         $payment = $order->getPayment();
 
+        $this->assertEquals(Order::STATE_PROCESSING, $order->getStatus());
+        $this->assertEquals(Order::STATE_PROCESSING, $order->getState());
+
         $this->assertEquals(PaymentMethodCodeInterface::CODE, $payment->getMethod());
 
         $paymentInfo = $payment->getAdditionalInformation();
 
-        $this->assertArrayHasKey(ResponseFieldsInterface::PUBLIC_KEY, $paymentInfo);
         $this->assertArrayHasKey(ResponseFieldsInterface::ACQUIRER_ID, $paymentInfo);
         $this->assertArrayHasKey(ResponseFieldsInterface::ORDER_ID, $paymentInfo);
         $this->assertArrayHasKey(ResponseFieldsInterface::LIQPAY_ORDER_ID, $paymentInfo);
+        $this->assertArrayHasKey(ResponseFieldsInterface::ACTION, $paymentInfo);
+        $this->assertEquals("LiqPay payment method under test", $paymentInfo['method_title']);
     }
 
     /**
-     * Retrieves quote by reserved order id.
-     *
-     * @param string $reservedOrderId
+     * @param string $customerEmail
+     * @return string
+     */
+    private function getCartId(string $customerEmail): string
+    {
+        $quote = $this->getQuote($customerEmail);
+
+        /** @var $session CheckoutSession */
+        $checkoutSession = $this->objectManager->get(CheckoutSession::class);
+        $checkoutSession->setQuoteId($quote->getId());
+
+        /** @var QuoteIdMask $quoteIdMask */
+        $quoteIdMask = $this->quoteIdMaskFactory->create();
+        $quoteIdMask->load($quote->getId(), 'quote_id');
+        return $quoteIdMask->getMaskedId();
+    }
+
+    /**
+     * @param string $customerEmail
      * @return Quote
      */
-    private function getQuote(string $reservedOrderId): Quote
+    private function getQuote(string $customerEmail): Quote
     {
         /** @var SearchCriteriaBuilder $searchCriteriaBuilder */
         $searchCriteriaBuilder = $this->objectManager->get(SearchCriteriaBuilder::class);
-        $searchCriteria = $searchCriteriaBuilder->addFilter('reserved_order_id', $reservedOrderId)
+        $searchCriteria = $searchCriteriaBuilder
+            ->addFilter('customer_email', $customerEmail)
             ->create();
 
         $items = $this->quoteRepository->getList($searchCriteria)->getItems();
