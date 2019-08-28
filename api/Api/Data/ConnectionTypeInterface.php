@@ -14,6 +14,6 @@ namespace Pronko\LiqPayApi\Api\Data;
 interface ConnectionTypeInterface
 {
     const BUILT_IN_FORM = 'built_in_form';
-    const WIDGET = 'Widget';
-    const REDIRECT = 'Redirect';
+    const WIDGET = 'widget';
+    const REDIRECT = 'redirect';
 }
