@@ -20,21 +20,13 @@ class RequestBuilder implements BuilderInterface
     private $builder;
 
     /**
-     * @var SignatureFactory
-     */
-    private $signatureFactory;
-
-    /**
      * RequestBuilder constructor.
      * @param BuilderInterface $builder
-     * @param SignatureFactory $signatureFactory
      */
     public function __construct(
-        BuilderInterface $builder,
-        SignatureFactory $signatureFactory
+        BuilderInterface $builder
     ) {
         $this->builder = $builder;
-        $this->signatureFactory = $signatureFactory;
     }
 
     /**
@@ -43,11 +35,9 @@ class RequestBuilder implements BuilderInterface
      */
     public function build(array $buildSubject)
     {
-        $data = $this->builder->build($buildSubject);
-
         return [
-            'data' => base64_encode(json_encode($data)),
-            'signature' => $this->signatureFactory->create($data),
+            'data' => $this->builder->build($buildSubject),
+            'signature' => '',
         ];
     }
 }

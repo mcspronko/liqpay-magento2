@@ -11,6 +11,8 @@ use Magento\Payment\Gateway\Http\ConverterInterface;
 use Magento\Payment\Gateway\Http\TransferBuilder;
 use Magento\Payment\Gateway\Http\TransferFactoryInterface;
 use Magento\Payment\Gateway\Http\TransferInterface;
+use Magento\Payment\Gateway\Http\ConverterException;
+use Magento\Payment\Model\Method\Logger;
 use Pronko\LiqPayGateway\Gateway\Config;
 use Pronko\LiqPaySdk\Api\ApiUrlInterface;
 
@@ -37,27 +39,40 @@ class TransferFactory implements TransferFactoryInterface
     private $config;
 
     /**
+     * @var Logger
+     */
+    private $logger;
+
+    /**
      * TransferFactory constructor.
      * @param TransferBuilder $transferBuilder
      * @param ConverterInterface $converter
      * @param Config $config
+     * @param Logger $logger
      */
     public function __construct(
         TransferBuilder $transferBuilder,
         ConverterInterface $converter,
-        Config $config
+        Config $config,
+        Logger $logger
     ) {
         $this->transferBuilder = $transferBuilder;
         $this->converter = $converter;
         $this->config = $config;
+        $this->logger = $logger;
     }
 
     /**
      * @param array $request
      * @return TransferInterface
+     * @throws ConverterException
      */
     public function create(array $request)
     {
+        $this->logger->debug([
+            'request_raw' => $request
+        ]);
+
         return $this->transferBuilder
             ->setUri($this->config->getGatewayUrl() . ApiUrlInterface::REQUEST_ENDPOINT_PATH)
             ->setMethod('POST')
@@ -65,7 +80,7 @@ class TransferFactory implements TransferFactoryInterface
                 'timeout' => self::REQUEST_TIMEOUT,
                 'verifypeer' => true
             ])
-            ->setBody(http_build_query($request))
+            ->setBody($this->converter->convert($request))
             ->setHeaders($this->config->getGatewayHeaders())
             ->build();
     }

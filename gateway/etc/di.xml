@@ -122,7 +122,8 @@
 
     <type name="Pronko\LiqPayGateway\Gateway\Http\TransferFactory">
         <arguments>
-            <argument name="converter" xsi:type="object">Pronko\LiqPayGateway\Gateway\Converter\ArrayToJson</argument>
+            <argument name="logger" xsi:type="object">PronkoLiqPayLogger</argument>
+            <argument name="converter" xsi:type="object">Pronko\LiqPayGateway\Gateway\Converter\ArrayToEncoded</argument>
         </arguments>
     </type>
 </config>
