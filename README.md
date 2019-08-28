@@ -44,7 +44,10 @@ Liqpay – is a payment system that allows easily send money from Visa or Master
 
 Download composer `wget http://getcomposer.org/composer.phar`
 
-Install `php composer.phar require mcspronko/liqpay-magento2`
+```bash
+composer config repositories.pronko-liqpay git@github.com:mcspronko/liqpay-magento2.git
+composer require pronko/liqpay-magento2
+```
 
 ## Modman
 Download [modman](https://github.com/colinmollenhour/modman) `bash < <(wget -q --no-check-certificate -O - https://raw.github.com/colinmollenhour/modman/master/modman-installer)`
