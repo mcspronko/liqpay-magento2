@@ -7,30 +7,15 @@
 define([], function () {
     return {
         /**
-         * @return JSON
+         * @return {component: string, type: string}
          */
-        getComponent: function () {
-            let component = {};
+        getComponent: function (connectionTypes) {
             let connectionType = this.getConnectionType();
 
-            switch (connectionType) {
-                case 'built_in_form':
-                    component = {
-                        type: 'pronko_liqpay',
-                        component: 'Pronko_LiqPayCheckout/js/view/payment/method-renderer/cc-form'
-                    };
-                    break;
-                case 'redirect':
-                    component = {
-                        type: 'pronko_liqpay',
-                        component: 'Pronko_LiqPayCheckout/js/view/payment/method-renderer/redirect-form'
-                    };
-                    break;
-                    //TODO Have to change for widget payment type
-                case 'widget':
-                    component = {};
-                    break;
-            }
+            let component = {
+                type: 'pronko_liqpay',
+                component : connectionTypes[connectionType]
+            };
 
             return component;
         },

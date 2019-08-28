@@ -11,7 +11,7 @@ define([
 
     return Component.extend({
         defaults: {
-            template: 'Pronko_LiqPayCheckout/payment/redirect-form',
+            template: 'Pronko_LiqPayRedirect/payment/redirect-form',
             code: 'pronko_liqpay'
         },
 

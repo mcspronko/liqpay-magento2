@@ -13,8 +13,24 @@ define(
     function (Component, rendererList, renderComponentType) {
         'use strict';
 
-       rendererList.push(renderComponentType.getComponent());
+        return Component.extend({
+            /**
+             *  @returns this
+             */
+            initialize: function () {
+                this._super();
+                this.renderPaymentForm();
+                return this;
+            },
 
-        return Component.extend({});
+            /**
+             *  @returns valid
+             */
+            renderPaymentForm: function () {
+                rendererList.push(
+                    renderComponentType.getComponent(this.connection_types)
+                );
+            }
+        });
     }
 );

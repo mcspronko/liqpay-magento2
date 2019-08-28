@@ -16,21 +16,14 @@
                                 <item name="steps" xsi:type="array">
                                     <item name="children" xsi:type="array">
                                         <item name="billing-step" xsi:type="array">
-                                            <item name="component" xsi:type="string">uiComponent</item>
                                             <item name="children" xsi:type="array">
                                                 <item name="payment" xsi:type="array">
                                                     <item name="children" xsi:type="array">
                                                         <item name="renders" xsi:type="array">
                                                             <item name="children" xsi:type="array">
                                                                 <item name="pronko_liqpay" xsi:type="array">
-                                                                    <item name="component" xsi:type="string">Pronko_LiqPayCheckout/js/view/payment/liqpay</item>
                                                                     <item name="connection_types" xsi:type="array">
-                                                                        <item name="built_in_form" xsi:type="string">Pronko_LiqPayCheckout/js/view/payment/method-renderer/cc-form</item>
-                                                                    </item>
-                                                                    <item name="methods" xsi:type="array">
-                                                                        <item name="pronko_liqpay" xsi:type="array">
-                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
-                                                                        </item>
+                                                                        <item name="redirect" xsi:type="string">Pronko_LiqPayRedirect/js/view/payment/method-renderer/redirect-form</item>
                                                                     </item>
                                                                 </item>
                                                             </item>
