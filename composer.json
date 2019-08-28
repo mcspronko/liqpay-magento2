@@ -2,15 +2,17 @@
   "name": "pronko/liqpay-magento2",
   "description": "LiqPay extension for Magento 2 Metapackage",
   "replace": {
-    "pronko/checkout": "self.version",
-    "pronko/test": "self.version",
-    "pronko/admin": "self.version",
-    "pronko/gateway": "self.version",
-    "pronko/redirect": "self.version",
-    "pronko/card-admin": "self.version",
-    "pronko/card-gateway": "self.version",
-    "pronko/widget": "self.version",
-    "pronko/api": "self.version"
+    "pronko/liqpay-checkout": "self.version",
+    "pronko/liqpay-test": "self.version",
+    "pronko/liqpay-admin": "self.version",
+    "pronko/liqpay-gateway": "self.version",
+    "pronko/liqpay-redirect": "self.version",
+    "pronko/liqpay-card-admin": "self.version",
+    "pronko/liqpay-card-gateway": "self.version",
+    "pronko/liqpay-widget": "self.version",
+    "pronko/liqpay-customer": "self.version",
+    "pronko/liqpay-api": "self.version",
+    "pronko/liqpay-sdk": "self.version"
   },
   "license": "MIT",
   "require": {
@@ -22,7 +24,7 @@
   },
   "scripts": {
     "test-coverage": "vendor/bin/phpunit Test --coverage-text=pronko_liqpay_code_coverage_report.txt",
-    "test-phpcs": "vendor/bin/phpcs --standard=Magento2 ./checkout/ ./test/ ./admin/ ./card-gateway/ ./gateway/ ./redirect/ ./widget/ ./api/",
+    "test-phpcs": "vendor/bin/phpcs --standard=Magento2 ./checkout/ ./test/ ./admin/ ./card-gateway/ ./gateway/ ./redirect/ ./customer/ ./widget/ ./api/",
     "post-install-cmd": [
       "[ $COMPOSER_DEV_MODE -eq 1 ] && vendor/bin/phpcs --config-set installed_paths ../../magento/magento-coding-standard/"
     ],
@@ -48,7 +50,8 @@
       "card-gateway/registration.php",
       "redirect/registration.php",
       "widget/registration.php",
-      "api/registration.php"
+      "api/registration.php",
+      "customer/registration.php"
     ],
     "psr-4": {
       "Pronko\\LiqPayCheckout\\": "checkout",
@@ -59,6 +62,7 @@
       "Pronko\\LiqPayCardGateway\\": "card-gateway",
       "Pronko\\LiqPayRedirect\\": "redirect",
       "Pronko\\LiqPayWidget\\": "widget",
+      "Pronko\\LiqPayCustomer\\": "customer",
       "Pronko\\LiqPayApi\\": "api"
     }
   },

@@ -5,7 +5,7 @@
  */
 declare(strict_types=1);
 
-namespace Pronko\LiqPayAdmin\Plugin\Payment\Block;
+namespace Pronko\LiqPayCustomer\Plugin\Payment\Block;
 
 use Pronko\LiqPayApi\Api\Data\PaymentMethodCodeInterface;
 use Magento\Framework\Exception\LocalizedException;
@@ -21,11 +21,8 @@ class Info
      * @var array
      */
     private $labels = [
-        ResponseFieldsInterface::ACQUIRER_ID => 'Acquirer ID',
-        ResponseFieldsInterface::PAYMENT_ID => 'Payment ID',
-        ResponseFieldsInterface::LIQPAY_ORDER_ID => 'LiqPay Order ID',
-        ResponseFieldsInterface::PAY_TYPE => 'Payment Type',
-        ResponseFieldsInterface::SENDER_CARD_BANK => 'Bank',
+        ResponseFieldsInterface::SENDER_CARD_MASK => 'Card Number (Hidden)',
+        ResponseFieldsInterface::SENDER_CARD_TYPE => 'Type',
     ];
 
     /**

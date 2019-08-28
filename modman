@@ -7,3 +7,4 @@
 ./widget app/code/Pronko/LiqPayWidget
 ./api app/code/Pronko/LiqPayApi
 ./sdk app/code/Pronko/LiqPaySdk
+./customer app/code/Pronko/LiqPayCustomer

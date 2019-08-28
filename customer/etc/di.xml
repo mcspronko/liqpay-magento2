@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Pronko Consulting (https://www.pronkoconsulting.com)
+ * See LICENSE for the license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- LiqPay Payment Info Plugin for Labels and Values -->
+    <type name="Magento\Payment\Block\Info">
+        <plugin name="PronkoLiqPayCustomerAdditionalInfoLabels" type="Pronko\LiqPayCustomer\Plugin\Payment\Block\Info" />
+    </type>
+</config>

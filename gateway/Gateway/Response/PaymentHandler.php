@@ -27,6 +27,9 @@ class PaymentHandler implements HandlerInterface
         ResponseFieldsInterface::ORDER_ID,
         ResponseFieldsInterface::LIQPAY_ORDER_ID,
         ResponseFieldsInterface::TRANSACTION_ID,
+        ResponseFieldsInterface::SENDER_CARD_MASK,
+        ResponseFieldsInterface::SENDER_CARD_TYPE,
+        ResponseFieldsInterface::SENDER_CARD_BANK,
     ];
 
     /**

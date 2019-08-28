@@ -23,4 +23,7 @@ interface ResponseFieldsInterface
     const TRANSACTION_ID = 'transaction_id';
     const CREATE_DATE = 'create_date';
     const END_DATE = 'end_date';
+    const SENDER_CARD_MASK = 'sender_card_mask2';
+    const SENDER_CARD_BANK = 'sender_card_bank';
+    const SENDER_CARD_TYPE = 'sender_card_type';
 }
