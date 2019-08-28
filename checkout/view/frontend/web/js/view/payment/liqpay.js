@@ -15,12 +15,6 @@ define(
 
        rendererList.push(renderComponentType.getComponent());
 
-        return Component.extend({
-            initialize: function () {
-                this._super();
-                console.log(window.checkoutConfig.payment);
-                return this;
-            }
-        });
+        return Component.extend({});
     }
 );
