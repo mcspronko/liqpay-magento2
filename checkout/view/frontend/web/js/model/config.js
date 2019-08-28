@@ -14,7 +14,7 @@ define([], function () {
 
             let component = {
                 type: 'pronko_liqpay',
-                component : connectionTypes[connectionType]
+                component: connectionTypes[connectionType]
             };
 
             return component;

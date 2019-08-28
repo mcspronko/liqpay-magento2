@@ -19,18 +19,13 @@ define(
              */
             initialize: function () {
                 this._super();
-                this.renderPaymentForm();
-                return this;
-            },
 
-            /**
-             *  @returns valid
-             */
-            renderPaymentForm: function () {
                 rendererList.push(
                     renderComponentType.getComponent(this.connection_types)
                 );
-            }
+
+                return this;
+            },
         });
     }
 );
