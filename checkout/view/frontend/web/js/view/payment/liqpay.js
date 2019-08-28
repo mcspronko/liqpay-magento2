@@ -7,16 +7,25 @@
 define(
     [
         'uiComponent',
-        'Magento_Checkout/js/model/payment/renderer-list'
+        'Magento_Checkout/js/model/payment/renderer-list',
+        'Pronko_LiqPayCheckout/js/model/config'
     ],
-    function (Component, rendererList) {
+    function (Component, rendererList, renderComponentType) {
         'use strict';
 
-        rendererList.push({
-            type: 'pronko_liqpay',
-            component: 'Pronko_LiqPayCheckout/js/view/payment/method-renderer/cc-form'
-        });
+        return Component.extend({
+            /**
+             *  @returns this
+             */
+            initialize: function () {
+                this._super();
 
-        return Component.extend({});
+                rendererList.push(
+                    renderComponentType.getComponent(this.connection_types)
+                );
+
+                return this;
+            },
+        });
     }
 );

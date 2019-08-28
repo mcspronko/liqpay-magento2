@@ -31,6 +31,11 @@
                             <source_model>Pronko\LiqPayAdmin\Source\Environment</source_model>
                             <config_path>payment/pronko_liqpay/mode</config_path>
                         </field>
+                        <field id="connection_type" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                            <label>Connection Type</label>
+                            <source_model>Pronko\LiqPayAdmin\Source\ConnectionType</source_model>
+                            <config_path>payment/pronko_liqpay/connection_type</config_path>
+                        </field>
                     </group>
                     <group id="pronko_liqpay_account" translate="label" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="5">
                         <label>Account Settings</label>

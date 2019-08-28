@@ -14,4 +14,18 @@
             </argument>
         </arguments>
     </type>
+    <type name="Magento\Checkout\Model\CompositeConfigProvider">
+        <arguments>
+            <argument name="configProviders" xsi:type="array">
+                <item name="pronko_liqpay_config_provider" xsi:type="object">Pronko\LiqPayCheckout\Model\DefaultConfigProvider</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <!-- LiqPay Payment Configuration -->
+    <type name="Pronko\LiqPayCheckout\Model\DefaultConfigProvider">
+        <arguments>
+            <argument name="config" xsi:type="object">Pronko\LiqPayGateway\Gateway\Config\Config</argument>
+        </arguments>
+    </type>
 </config>
