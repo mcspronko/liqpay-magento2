@@ -23,6 +23,10 @@ $rate->getPrice(1);
 $quote->getShippingAddress()->setShippingMethod('freeshipping_freeshipping');
 $quote->getShippingAddress()->addShippingRate($rate);
 $quote->getPayment()->setMethod('pronko_liqpay');
+$quote->getPayment()->setAdditionalInformation('cc_number', '4242424242424242');
+$quote->getPayment()->setAdditionalInformation('cc_exp_year', '30');
+$quote->getPayment()->setAdditionalInformation('cc_exp_month', '11');
+$quote->getPayment()->setAdditionalInformation('cc_type', 'VI');
 
 $quote->collectTotals();
 $quote->save();
