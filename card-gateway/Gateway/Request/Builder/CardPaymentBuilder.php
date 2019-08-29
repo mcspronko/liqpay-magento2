@@ -9,7 +9,10 @@ namespace Pronko\LiqPayCardGateway\Gateway\Request\Builder;
 
 use Magento\Payment\Gateway\Data\OrderAdapterInterface;
 use Magento\Payment\Gateway\Request\BuilderInterface;
+use Magento\Sales\Model\Order\Payment;
 use Pronko\LiqPaySdk\Api\RequestFieldsInterface as RequestFields;
+use Pronko\LiqPayCardGateway\Api\Data\CardPaymentInterface;
+
 
 /**
  * Class CardPaymentBuilder
@@ -24,11 +27,13 @@ class CardPaymentBuilder implements BuilderInterface
     {
         /** @var OrderAdapterInterface $order */
         $order = $buildSubject['payment']->getOrder();
+        /** @var Payment $order */
+        $payment = $buildSubject['payment']->getPayment();
         return [
-            RequestFields::CARD => '4242424242424242',
-            RequestFields::CARD_CVV => 111,
-            RequestFields::CARD_EXP_MONTH => 03,
-            RequestFields::CARD_EXP_YEAR => 22,
+            RequestFields::CARD => $payment->getData(CardPaymentInterface::NUMBER),
+            RequestFields::CARD_CVV => $payment->getData(CardPaymentInterface::CVV),
+            RequestFields::CARD_EXP_MONTH => $payment->getData(CardPaymentInterface::EXPIRATION_MONTH),
+            RequestFields::CARD_EXP_YEAR => $payment->getData(CardPaymentInterface::EXPIRATION_YEAR),
             RequestFields::AMOUNT => $order->getGrandTotalAmount(),
             RequestFields::CURRENCY => $order->getCurrencyCode(),
             RequestFields::PHONE => $this->getPhone($order),
