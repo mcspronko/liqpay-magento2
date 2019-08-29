@@ -25,7 +25,8 @@ class DataAssignObserver extends AbstractDataAssignObserver
         CardPaymentInterface::TYPE,
         CardPaymentInterface::EXPIRATION_YEAR,
         CardPaymentInterface::EXPIRATION_MONTH,
-        CardPaymentInterface::NUMBER
+        CardPaymentInterface::NUMBER,
+        CardPaymentInterface::CVV
     ];
 
     /**
