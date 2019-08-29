@@ -13,7 +13,6 @@ use Magento\Sales\Model\Order\Payment;
 use Pronko\LiqPaySdk\Api\RequestFieldsInterface as RequestFields;
 use Pronko\LiqPayCardGateway\Api\Data\CardPaymentInterface;
 
-
 /**
  * Class CardPaymentBuilder
  */
