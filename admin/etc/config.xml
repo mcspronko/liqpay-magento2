@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <pronko_liqpay_section>
+                <pronko_liqpay>
+                    <pronko_liqpay_general>
+                        <payment_action>
+                            <payment_action>authorize</payment_action>
+                        </payment_action>
+                    </pronko_liqpay_general>
+                    <pronko_liqpay_advanced>
+                        <order_status>processing</order_status>
+                        <accepted_currencies>USD</accepted_currencies>
+                    </pronko_liqpay_advanced>
+                </pronko_liqpay>
+            </pronko_liqpay_section>
+        </payment>
+    </default>
+</config>
