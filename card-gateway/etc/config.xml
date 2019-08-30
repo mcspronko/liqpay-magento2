@@ -10,6 +10,9 @@
         <payment>
             <pronko_liqpay>
                 <cctypes>VI,MC</cctypes>
+                <payment_action>authorize_capture</payment_action>
+                <allowed_currencies>USD,UAH,RUB,EUR</allowed_currencies>
+                <order_status>processing</order_status>
             </pronko_liqpay>
         </payment>
     </default>
