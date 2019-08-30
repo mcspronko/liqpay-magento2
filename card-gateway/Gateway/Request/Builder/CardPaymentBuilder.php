@@ -41,6 +41,6 @@ class CardPaymentBuilder implements BuilderInterface
      */
     private function getPhone(OrderAdapterInterface $orderAdapter): string
     {
-        return (string) '+380987707070'; //$orderAdapter->getBillingAddress()->getTelephone();
+        return (string) $orderAdapter->getBillingAddress()->getTelephone();
     }
 }
