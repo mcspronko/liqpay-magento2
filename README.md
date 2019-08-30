@@ -49,7 +49,7 @@ Liqpay – is a payment system that allows easily send money from Visa or Master
 Download composer `wget http://getcomposer.org/composer.phar`
 
 ```bash
-composer config repositories.pronko-liqpay git@github.com:mcspronko/liqpay-magento2.git
+composer config repositories.pronko-liqpay git git@github.com:mcspronko/liqpay-magento2.git
 composer require pronko/liqpay-magento2
 ```
 
