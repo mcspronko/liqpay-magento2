@@ -23,6 +23,8 @@ class Config
     const SANDBOX_PUBLIC_KEY = 'sandbox_public_key';
     const SANDBOX_PRIVATE_KEY = 'sandbox_private_key';
     const ENVIRONMENT_MODE = 'mode';
+    const ORDER_PREFIX = 'order_prefix';
+    const ORDER_SUFFIX = 'order_suffix';
     /**#@-*/
 
     /**
@@ -93,7 +95,7 @@ class Config
      */
     public function getOrderPrefix(): string
     {
-        return '';
+        return (string) $this->config->getValue(self::ORDER_PREFIX);
     }
 
     /**
@@ -101,7 +103,7 @@ class Config
      */
     public function getOrderSuffix(): string
     {
-        return '';
+        return (string) $this->config->getValue(self::ORDER_SUFFIX);
     }
 
     /**
