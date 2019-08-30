@@ -10,7 +10,7 @@ namespace Pronko\LiqPayAdmin\Source;
 use Magento\Framework\Data\OptionSourceInterface;
 
 /**
- * Class ConnectionType
+ * Class Currencies
  */
 class Currencies implements OptionSourceInterface
 {

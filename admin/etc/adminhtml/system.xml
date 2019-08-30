@@ -36,9 +36,9 @@
                             <source_model>Pronko\LiqPayAdmin\Source\ConnectionType</source_model>
                             <config_path>payment/pronko_liqpay/connection_type</config_path>
                         </field>
-                        <field id="payment_action" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                        <field id="payment_action" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                             <label>Payment Action</label>
-                            <source_model>Magento\AuthorizenetAcceptjs\Model\Adminhtml\Source\PaymentAction</source_model>
+                            <source_model>Pronko\LiqPayAdmin\Source\PaymentAction</source_model>
                             <config_path>payment/pronko_liqpay/payment_action</config_path>
                         </field>
                     </group>
@@ -85,18 +85,18 @@
                             <label>Maximum Order Total</label>
                             <config_path>payment/pronko_liqpay/maximum_order_total</config_path>
                         </field>
-                        <field id="sort_order" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <field id="sort_total" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
                             <label>Sort Total</label>
-                            <config_path>payment/pronko_liqpay/sort_order</config_path>
+                            <config_path>payment/pronko_liqpay/sort_total</config_path>
                         </field>
-                        <field id="order_status" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                        <field id="order_status" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                             <label>New Order Status</label>
-                            <source_model>Magento\Sales\Model\Config\Source\Order\Status\Processing</source_model>
+                            <source_model>Magento\Sales\Model\Config\Source\Order\Status</source_model>
                         </field>
                         <field id="accepted_currencies" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                             <label>Accepted Currencies</label>
                             <source_model>Pronko\LiqPayAdmin\Source\Currencies</source_model>
-                            <config_path>payment/pronko_liqpay/mode</config_path>
+                            <config_path>payment/pronko_liqpay/accepted_currencies</config_path>
                         </field>
                     </group>
                  </group>

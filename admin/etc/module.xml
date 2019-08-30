@@ -6,9 +6,5 @@
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-    <module name="Pronko_LiqPayAdmin">
-        <sequence>
-            <module name="Magento_Sales"/>
-        </sequence>
-    </module>
+    <module name="Pronko_LiqPayAdmin" />
 </config>
