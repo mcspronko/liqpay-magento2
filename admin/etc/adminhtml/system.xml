@@ -85,8 +85,8 @@
                             <label>Maximum Order Total</label>
                             <config_path>payment/pronko_liqpay/maximum_order_total</config_path>
                         </field>
-                        <field id="sort_total" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
-                            <label>Sort Total</label>
+                        <field id="sort_order" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                            <label>Sort Order</label>
                             <config_path>payment/pronko_liqpay/sort_total</config_path>
                         </field>
                         <field id="order_status" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
