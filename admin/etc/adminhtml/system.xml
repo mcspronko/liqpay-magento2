@@ -36,6 +36,11 @@
                             <source_model>Pronko\LiqPayAdmin\Source\ConnectionType</source_model>
                             <config_path>payment/pronko_liqpay/connection_type</config_path>
                         </field>
+                        <field id="payment_action" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                            <label>Payment Action</label>
+                            <source_model>Pronko\LiqPayAdmin\Source\PaymentAction</source_model>
+                            <config_path>payment/pronko_liqpay/payment_action</config_path>
+                        </field>
                     </group>
                     <group id="pronko_liqpay_account" translate="label" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="5">
                         <label>Account Settings</label>
@@ -66,6 +71,32 @@
                         <field id="production_private_key" translate="label" type="text" sortOrder="195" showInDefault="1" showInWebsite="1" showInStore="1">
                             <label>Private Key</label>
                             <config_path>payment/pronko_liqpay/production_private_key</config_path>
+                        </field>
+                    </group>
+                    <group id="pronko_liqpay_advanced" translate="label" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10">
+                        <label>Advanced Settings</label>
+                        <attribute type="expanded">0</attribute>
+                        <frontend_model>Magento\Config\Block\System\Config\Form\Fieldset</frontend_model>
+                        <field id="minimum_order_total" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                            <label>Minimum Order Total</label>
+                            <config_path>payment/pronko_liqpay/minimum_order_total</config_path>
+                        </field>
+                        <field id="maximum_order_total" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                            <label>Maximum Order Total</label>
+                            <config_path>payment/pronko_liqpay/maximum_order_total</config_path>
+                        </field>
+                        <field id="sort_order" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                            <label>Sort Order</label>
+                            <config_path>payment/pronko_liqpay/sort_total</config_path>
+                        </field>
+                        <field id="order_status" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                            <label>New Order Status</label>
+                            <source_model>Magento\Sales\Model\Config\Source\Order\Status</source_model>
+                        </field>
+                        <field id="accepted_currencies" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                            <label>Accepted Currencies</label>
+                            <source_model>Pronko\LiqPayAdmin\Source\Currencies</source_model>
+                            <config_path>payment/pronko_liqpay/accepted_currencies</config_path>
                         </field>
                     </group>
                  </group>

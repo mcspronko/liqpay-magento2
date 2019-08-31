@@ -8,3 +8,4 @@
 ./api app/code/Pronko/LiqPayApi
 ./sdk app/code/Pronko/LiqPaySdk
 ./customer app/code/Pronko/LiqPayCustomer
+./card-admin app/code/Pronko/LiqPayCardAdmin
