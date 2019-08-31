@@ -12,12 +12,27 @@ use Magento\Payment\Gateway\Request\BuilderInterface;
 use Magento\Sales\Model\Order\Payment;
 use Pronko\LiqPaySdk\Api\RequestFieldsInterface as RequestFields;
 use Pronko\LiqPayCardGateway\Api\Data\CardPaymentInterface;
+use Pronko\LiqPayCardGateway\Gateway\Request\CardPaymentDataFormatter;
 
 /**
  * Class CardPaymentBuilder
  */
 class CardPaymentBuilder implements BuilderInterface
 {
+    /**
+     * @var CardPaymentDataFormatter
+     */
+    private $cardPaymentDataFormatter;
+
+    /**
+     * @param CardPaymentDataFormatter $cardPaymentDataFormatter
+     */
+    public function __construct(
+        CardPaymentDataFormatter $cardPaymentDataFormatter
+    ) {
+        $this->cardPaymentDataFormatter = $cardPaymentDataFormatter;
+    }
+
     /**
      * @param array $buildSubject
      * @return array
@@ -31,8 +46,8 @@ class CardPaymentBuilder implements BuilderInterface
         return [
             RequestFields::CARD => $payment->getData(CardPaymentInterface::NUMBER),
             RequestFields::CARD_CVV => $payment->getData(CardPaymentInterface::CVV),
-            RequestFields::CARD_EXP_MONTH => $payment->getData(CardPaymentInterface::EXPIRATION_MONTH),
-            RequestFields::CARD_EXP_YEAR => $payment->getData(CardPaymentInterface::EXPIRATION_YEAR),
+            RequestFields::CARD_EXP_MONTH => $this->cardPaymentDataFormatter->getFormattedMonth($payment->getData(CardPaymentInterface::EXPIRATION_MONTH)),
+            RequestFields::CARD_EXP_YEAR => $this->cardPaymentDataFormatter->getFormattedYear($payment->getData(CardPaymentInterface::EXPIRATION_YEAR)),
             RequestFields::AMOUNT => $order->getGrandTotalAmount(),
             RequestFields::CURRENCY => $order->getCurrencyCode(),
             RequestFields::PHONE => $this->getPhone($order),
@@ -45,6 +60,6 @@ class CardPaymentBuilder implements BuilderInterface
      */
     private function getPhone(OrderAdapterInterface $orderAdapter): string
     {
-        return (string) $orderAdapter->getBillingAddress()->getTelephone();
+        return (string)$orderAdapter->getBillingAddress()->getTelephone();
     }
 }
