@@ -5,7 +5,7 @@
  */
 declare(strict_types=1);
 
-namespace Pronko\LiqPayAdmin\Api\Data;
+namespace Pronko\LiqPayApi\Api\Data;
 
 /**
  * Interface EnvironmentStatusInterface

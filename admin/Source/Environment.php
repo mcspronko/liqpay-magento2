@@ -7,18 +7,16 @@ declare(strict_types = 1);
 
 namespace Pronko\LiqPayAdmin\Source;
 
-use Magento\Framework\Option\ArrayInterface;
-use Pronko\LiqPayAdmin\Api\Data\EnvironmentStatusInterface;
+use Magento\Framework\Data\OptionSourceInterface;
+use Pronko\LiqPayApi\Api\Data\EnvironmentStatusInterface;
 
 /**
  * Class Environment
  */
-class Environment implements ArrayInterface
+class Environment implements OptionSourceInterface
 {
     /**
-     * Return array of options as value-label pairs
-     *
-     * @return array Format: array(array('value' => '<value>', 'label' => '<label>'), ...)
+     * @return array
      */
     public function toOptionArray()
     {

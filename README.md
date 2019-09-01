@@ -1,13 +1,38 @@
+<div align="center">
+  <img src="https://img.shields.io/badge/magento-2.X-brightgreen.svg?logo=magento&longCache=true&style=flat-square" alt="Supported Magento Versions" />
+  <a href="https://github.com/mcspronko/liqpay-magento2/graphs/commit-activity" target="_blank"><img src="https://img.shields.io/badge/maintained%3F-yes-brightgreen.svg?style=flat-square" alt="Maintained - Yes" /></a>
+  <a href="https://opensource.org/licenses/MIT" target="_blank"><img src="https://img.shields.io/badge/license-MIT-blue.svg" /></a>
+</div>
+
 # LiqPay Extension for Magento 2
 LiqPay payment integration extension for Magento 2.
 
 Check out the [Wiki pages](https://github.com/mcspronko/liqpay-magento2/wiki) for the project details.
 
+# Idea
+The idea of this repository and contribution is to learn how to create payment integrations for Magento 2. Each and everyone can contribute.
+
 ## About LiqPay
 Liqpay – is a payment system that allows easily send money from Visa or MasterCard cards to virtual account in Liqpay system linked to a mobile phone (cell phone) number. Later on you may send money to other phone numbers, withdraw money from Liqpay system to your card or leave money at your account and use it later.
 
-# Idea
-The idea of this repository and contribution is to learn how to create payment integrations for Magento 2. Each and everyone can contribute.
+## Screenshots
+
+### Checkout Payment Page
+
+![Checkout Payment Page](https://raw.githubusercontent.com/mcspronko/liqpay-magento2/master/docs/checkout-payment-page.png)
+
+### Payment Information
+
+![Payment Information](https://raw.githubusercontent.com/mcspronko/liqpay-magento2/master/docs/admin-order-view.png)
+
+### Configuration Settings
+
+![Configuration Settings](https://raw.githubusercontent.com/mcspronko/liqpay-magento2/master/docs/admin-config.png)
+
+### Order Transaction Details Page
+
+![Order Transaction Details Page](https://raw.githubusercontent.com/mcspronko/liqpay-magento2/master/docs/order-transaction-details.png)
+
 
 # How to Contribute
 0. Join the Discord [#liqpay-magento2](https://discord.gg/Ukwq3xQ) channel
@@ -23,7 +48,10 @@ The idea of this repository and contribution is to learn how to create payment i
 
 Download composer `wget http://getcomposer.org/composer.phar`
 
-Install `php composer.phar require mcspronko/liqpay-magento2`
+```bash
+composer config repositories.pronko-liqpay git git@github.com:mcspronko/liqpay-magento2.git
+composer require pronko/liqpay-magento2
+```
 
 ## Modman
 Download [modman](https://github.com/colinmollenhour/modman) `bash < <(wget -q --no-check-certificate -O - https://raw.github.com/colinmollenhour/modman/master/modman-installer)`

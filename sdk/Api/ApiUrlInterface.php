@@ -13,5 +13,6 @@ namespace Pronko\LiqPaySdk\Api;
  */
 interface ApiUrlInterface
 {
-    const API_URL = 'https://www.liqpay.ua/api/request';
+    const API_URL = 'https://www.liqpay.ua/api/';
+    const REQUEST_ENDPOINT_PATH = 'request';
 }

@@ -1,0 +1,22 @@
+{
+  "name": "pronko/liqpay-sdk",
+  "description": "LiqPay SDK extension",
+  "version": "0.1.0",
+  "type": "magento2-module",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Pronko Consulting",
+      "homepage": "https://www.pronkoconsulting.com/"
+    }
+  ],
+  "minimum-stability": "alpha",
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Pronko\\LiqPaySdk\\": ""
+    }
+  }
+}
