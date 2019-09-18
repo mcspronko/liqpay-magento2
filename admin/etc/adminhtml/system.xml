@@ -76,10 +76,6 @@
                             <label>Order Prefix</label>
                             <config_path>payment/pronko_liqpay/order_prefix</config_path>
                         </field>
-                        <field id="order_suffix" translate="label" type="text" sortOrder="180" showInDefault="1" showInWebsite="1" showInStore="1">
-                            <label>Order Suffix</label>
-                            <config_path>payment/pronko_liqpay/order_suffix</config_path>
-                        </field>
                     </group>
                  </group>
             </group>
