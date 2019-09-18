@@ -46,8 +46,10 @@ class CardPaymentBuilder implements BuilderInterface
         return [
             RequestFields::CARD => $payment->getData(CardPaymentInterface::NUMBER),
             RequestFields::CARD_CVV => $payment->getData(CardPaymentInterface::CVV),
-            RequestFields::CARD_EXP_MONTH => $this->cardPaymentDataFormatter->getFormattedMonth($payment->getData(CardPaymentInterface::EXPIRATION_MONTH)),
-            RequestFields::CARD_EXP_YEAR => $this->cardPaymentDataFormatter->getFormattedYear($payment->getData(CardPaymentInterface::EXPIRATION_YEAR)),
+            RequestFields::CARD_EXP_MONTH => $this->cardPaymentDataFormatter
+                ->getFormattedMonth($payment->getData(CardPaymentInterface::EXPIRATION_MONTH)),
+            RequestFields::CARD_EXP_YEAR => $this->cardPaymentDataFormatter
+                ->getFormattedYear($payment->getData(CardPaymentInterface::EXPIRATION_YEAR)),
             RequestFields::AMOUNT => $order->getGrandTotalAmount(),
             RequestFields::CURRENCY => $order->getCurrencyCode(),
             RequestFields::PHONE => $this->getPhone($order),

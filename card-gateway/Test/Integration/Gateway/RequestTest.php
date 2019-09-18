@@ -100,7 +100,6 @@ class RequestTest extends TestCase
         $this->assertEquals("LiqPay payment method under test", $paymentInfo['method_title']);
     }
 
-
     /**
      * @magentoAppArea frontend
      * @magentoAppIsolation enabled
