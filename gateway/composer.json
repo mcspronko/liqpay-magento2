@@ -20,7 +20,8 @@
   "require": {
     "magento/framework": "*",
     "magento/module-payment": "*",
-    "magento/module-sales": "*"
+    "magento/module-sales": "*",
+    "pronko/liqpay-sdk": "*"
   },
   "require-dev": {
     "phpunit/phpunit": "~6.5",

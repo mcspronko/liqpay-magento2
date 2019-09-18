@@ -19,7 +19,8 @@
   },
   "require": {
     "magento/framework": "*",
-    "magento/module=config": "*"
+    "magento/module-config": "*",
+    "pronko/liqpay-api": "*"
   },
   "require-dev": {
     "phpunit/phpunit": "~6.5",
