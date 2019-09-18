@@ -1,7 +1,7 @@
 {
   "name": "pronko/liqpay-api",
   "description": "LiqPay Api extension",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "type": "magento2-module",
   "license": "proprietary",
   "authors": [
