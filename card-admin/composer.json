@@ -18,8 +18,8 @@
     }
   },
   "require": {
-    "magento/framework": "*",
-    "pronko/liqpay-admin": "*"
+    "magento/framework": "100.1.*|101.0.*|102.0.*",
+    "pronko/liqpay-admin": "^1.0"
   },
   "require-dev": {
     "phpunit/phpunit": "~6.5",
