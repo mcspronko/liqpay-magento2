@@ -11,7 +11,6 @@ use Magento\Payment\Gateway\Request\BuilderInterface;
 use Pronko\LiqPaySdk\Api\RequestFieldsInterface as RequestFields;
 use Pronko\LiqPaySdk\Api\VersionInterface;
 use Pronko\LiqPayGateway\Gateway\Config;
-use Pronko\LiqPayGateway\Gateway\Request\PaymentActionProvider;
 
 /**
  * Class GeneralBuilder
@@ -23,22 +22,15 @@ class GeneralBuilder implements BuilderInterface
      */
     private $config;
 
-    /**
-     * @var PaymentActionProvider
-     */
-    private $actionProvider;
 
     /**
      * GeneralBuilder constructor.
      * @param Config $config
-     * @param PaymentActionProvider $actionProvider
      */
     public function __construct(
-        Config $config,
-        PaymentActionProvider $actionProvider
+        Config $config
     ) {
         $this->config = $config;
-        $this->actionProvider = $actionProvider;
     }
 
     /**
@@ -50,7 +42,6 @@ class GeneralBuilder implements BuilderInterface
         return [
             RequestFields::VERSION => VersionInterface::VERSION,
             RequestFields::PUBLIC_KEY => $this->config->getPublicKey(),
-            RequestFields::ACTION => $this->actionProvider->getPaymentAction(),
         ];
     }
 }
