@@ -4,13 +4,13 @@ declare(strict_types=1);
 namespace Pronko\LiqPayAdmin\Source;
 
 use Magento\Framework\Data\OptionSourceInterface;
-use Pronko\LiqPayApi\Api\Data\PaymentTypeInterface;
+use Pronko\LiqPayApi\Api\Data\PaymentActionInterface;
 
 /**
- * Class PaymentType
+ * Class PaymentAction
  * @package Pronko\LiqPayAdmin\Source
  */
-class PaymentType implements OptionSourceInterface
+class PaymentAction implements OptionSourceInterface
 {
 
     /**
@@ -21,8 +21,8 @@ class PaymentType implements OptionSourceInterface
     public function toOptionArray()
     {
         return [
-            ['value' => PaymentTypeInterface::AUTHORIZE, 'label' => __('Authorize Only')],
-            ['value' => PaymentTypeInterface::AUTHORIZE_CAPTURE, 'label' => __('Authorize and Capture')],
+            ['value' => PaymentActionInterface::AUTHORIZE, 'label' => __('Authorize Only')],
+            ['value' => PaymentActionInterface::AUTHORIZE_CAPTURE, 'label' => __('Authorize and Capture')],
         ];
     }
 }

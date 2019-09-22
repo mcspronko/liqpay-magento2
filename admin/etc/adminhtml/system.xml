@@ -37,8 +37,8 @@
                             <config_path>payment/pronko_liqpay/connection_type</config_path>
                         </field>
                         <field id="payment_action" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
-                            <label>Payment Type</label>
-                            <source_model>Pronko\LiqPayAdmin\Source\PaymentType</source_model>
+                            <label>Payment Action</label>
+                            <source_model>Pronko\LiqPayAdmin\Source\PaymentAction</source_model>
                             <config_path>payment/pronko_liqpay/payment_action</config_path>
                         </field>
                     </group>
