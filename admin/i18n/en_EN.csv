@@ -14,3 +14,6 @@ Mode,Mode
 "Public Key","Public Key"
 "Private Key","Private Key"
 "Production Credentials","Production Credentials"
+"Advanced Settings","Advanced Settings"
+"Order Prefix","Order Prefix"
+"Order Suffix","Order Suffix"

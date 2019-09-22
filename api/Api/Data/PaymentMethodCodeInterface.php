@@ -8,8 +8,8 @@ declare(strict_types=1);
 namespace Pronko\LiqPayApi\Api\Data;
 
 /**
-* Interface PaymentMethodCodeInterface
-*/
+ * Interface PaymentMethodCodeInterface
+ */
 interface PaymentMethodCodeInterface
 {
     const CODE = 'pronko_liqpay';
