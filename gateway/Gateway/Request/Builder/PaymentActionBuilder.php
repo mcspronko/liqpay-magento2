@@ -9,11 +9,9 @@ use Pronko\LiqPaySdk\Api\RequestFieldsInterface as RequestFields;
 
 /**
  * Class PaymentActionBuilder
- * @package Pronko\LiqPayGateway\Gateway\Request\Builder
  */
 class PaymentActionBuilder implements BuilderInterface
 {
-
     /**
      * @var PaymentActionProvider
      */
