@@ -11,4 +11,5 @@ interface PaymentActionInterface
 {
     const AUTHORIZE = 'authorize';
     const AUTHORIZE_CAPTURE = 'authorize_capture';
+    const REFUND = 'refund';
 }
