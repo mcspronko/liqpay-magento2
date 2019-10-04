@@ -16,8 +16,6 @@ use Pronko\LiqPaySdk\Api\RequestFieldsInterface as RequestFields;
 class RefundOrderBuilder implements BuilderInterface
 {
 
-    use Formatter;
-
     /**
      * @var OrderIdProvider
      */
@@ -44,7 +42,7 @@ class RefundOrderBuilder implements BuilderInterface
         $order = $buildSubject['payment']->getOrder();
 
         return [
-            RequestFields::AMOUNT => $this->formatPrice($buildSubject['amount']),
+            RequestFields::AMOUNT => $buildSubject['amount'],
             RequestFields::ORDER_ID => $this->orderIdProvider->get($order),
         ];
     }
