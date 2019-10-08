@@ -36,6 +36,11 @@
                             <source_model>Pronko\LiqPayAdmin\Source\ConnectionType</source_model>
                             <config_path>payment/pronko_liqpay/connection_type</config_path>
                         </field>
+                        <field id="payment_action" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                            <label>Payment Action</label>
+                            <source_model>Pronko\LiqPayAdmin\Source\PaymentAction</source_model>
+                            <config_path>payment/pronko_liqpay/payment_action</config_path>
+                        </field>
                     </group>
                     <group id="pronko_liqpay_account" translate="label" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="5">
                         <label>Account Settings</label>
@@ -75,10 +80,6 @@
                         <field id="order_prefix" translate="label" type="text" sortOrder="175" showInDefault="1" showInWebsite="1" showInStore="1">
                             <label>Order Prefix</label>
                             <config_path>payment/pronko_liqpay/order_prefix</config_path>
-                        </field>
-                        <field id="order_suffix" translate="label" type="text" sortOrder="180" showInDefault="1" showInWebsite="1" showInStore="1">
-                            <label>Order Suffix</label>
-                            <config_path>payment/pronko_liqpay/order_suffix</config_path>
                         </field>
                     </group>
                  </group>

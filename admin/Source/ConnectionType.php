@@ -7,25 +7,22 @@ declare(strict_types=1);
 
 namespace Pronko\LiqPayAdmin\Source;
 
-use Magento\Framework\Option\ArrayInterface;
+use Magento\Framework\Data\OptionSourceInterface;
 use Pronko\LiqPayApi\Api\Data\ConnectionTypeInterface;
 
 /**
  * Class ConnectionType
+ * @api
  */
-class ConnectionType implements ArrayInterface
+class ConnectionType implements OptionSourceInterface
 {
     /**
-     * Return array of options as value-label pairs
-     *
-     * @return array Format: array(array('value' => '<value>', 'label' => '<label>'), ...)
+     * @return array
      */
     public function toOptionArray()
     {
         return [
             ['value' => ConnectionTypeInterface::BUILT_IN_FORM, 'label' => __('Built-in form')],
-            ['value' => ConnectionTypeInterface::WIDGET, 'label' => __('Widget')],
-            ['value' => ConnectionTypeInterface::REDIRECT, 'label' => __('Iframe/Redirect')],
         ];
     }
 }

@@ -19,6 +19,7 @@
                 <is_gateway>1</is_gateway>
                 <can_authorize>1</can_authorize>
                 <can_capture>1</can_capture>
+                <can_refund>1</can_refund>
                 <debug>1</debug>
             </pronko_liqpay>
         </payment>

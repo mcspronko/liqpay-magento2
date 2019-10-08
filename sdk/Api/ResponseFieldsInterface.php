@@ -26,4 +26,5 @@ interface ResponseFieldsInterface
     const SENDER_CARD_MASK = 'sender_card_mask2';
     const SENDER_CARD_BANK = 'sender_card_bank';
     const SENDER_CARD_TYPE = 'sender_card_type';
+    const STATUS = 'status';
 }

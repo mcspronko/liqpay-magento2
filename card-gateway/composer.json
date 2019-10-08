@@ -1,7 +1,7 @@
 {
   "name": "pronko/liqpay-card-gateway",
   "description": "LiqPay Card Gateway extension",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "type": "magento2-module",
   "license": "proprietary",
   "authors": [
@@ -18,8 +18,8 @@
     }
   },
   "require": {
-    "magento/framework": "*",
-    "magento/module-payment": "*"
+    "magento/framework": "100.1.*|101.0.*|102.0.*",
+    "magento/module-payment": "100.1.*|100.2.*|100.3.*"
   },
   "require-dev": {
     "phpunit/phpunit": "~6.5",
