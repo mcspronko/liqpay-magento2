@@ -51,7 +51,8 @@
       "redirect/registration.php",
       "widget/registration.php",
       "api/registration.php",
-      "customer/registration.php"
+      "customer/registration.php",
+      "sdk/registration.php"
     ],
     "psr-4": {
       "Pronko\\LiqPayCheckout\\": "checkout",
@@ -63,7 +64,8 @@
       "Pronko\\LiqPayRedirect\\": "redirect",
       "Pronko\\LiqPayWidget\\": "widget",
       "Pronko\\LiqPayCustomer\\": "customer",
-      "Pronko\\LiqPayApi\\": "api"
+      "Pronko\\LiqPayApi\\": "api",
+      "Pronko\\LiqPaySdk\\": "sdk"
     }
   },
   "repositories": [
