@@ -16,6 +16,16 @@
   },
   "license": "MIT",
   "require": {
+    "pronko/liqpay-admin": "~1.1",
+    "pronko/liqpay-api": "~1.1",
+    "pronko/liqpay-card-gateway": "~1.1",
+    "pronko/liqpay-checkout": "~1.1",
+    "pronko/liqpay-customer": "~1.1",
+    "pronko/liqpay-gateway": "~1.1",
+    "pronko/liqpay-card-admin": "~1.1",
+    "pronko/liqpay-sdk": "~1.1",
+    "pronko/liqpay-test": "~0.2",
+    "pronko/liqpay-widget": "~0.2",
     "magento/framework": "~102|~103"
   },
   "require-dev": {
