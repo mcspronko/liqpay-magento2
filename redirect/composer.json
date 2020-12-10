@@ -1,7 +1,7 @@
 {
   "name": "pronko/liqpay-redirect",
   "description": "LiqPay Redirect extension",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "magento2-module",
   "license": "proprietary",
   "authors": [
@@ -18,8 +18,8 @@
     }
   },
   "require": {
-    "magento/framework": "*",
-    "pronko/liqpay-admin": "*"
+    "magento/framework": "~102|~103",
+    "pronko/liqpay-admin": "~1.1"
   },
   "require-dev": {
     "phpunit/phpunit": "~6.5",
