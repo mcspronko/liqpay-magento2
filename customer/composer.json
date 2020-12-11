@@ -1,7 +1,7 @@
 {
   "name": "pronko/liqpay-customer",
   "description": "LiqPay Customer extension",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "magento2-module",
   "license": "proprietary",
   "authors": [
@@ -18,8 +18,8 @@
     }
   },
   "require": {
-    "magento/framework": "100.1.*|101.0.*|102.0.*",
-    "magento/module-payment": "100.1.*|100.2.*|100.3.*"
+    "magento/framework": "~102|~103",
+    "magento/module-payment": "~100"
   },
   "require-dev": {
     "phpunit/phpunit": "~6.5",
