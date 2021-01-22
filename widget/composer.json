@@ -20,7 +20,7 @@
   "require": {
     "magento/framework": "~102|~103",
     "magento/module-payment": "~100",
-    "pronko/liqpay-admin": "~1.1"
+    "pronko/liqpay-admin": "~1.2"
   },
   "require-dev": {
     "phpunit/phpunit": "~6.5",
