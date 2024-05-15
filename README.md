@@ -4,13 +4,10 @@
   <a href="https://opensource.org/licenses/MIT" target="_blank"><img src="https://img.shields.io/badge/license-MIT-blue.svg" /></a>
 </div>
 
-# LiqPay Extension for Magento 2
+# Pronko Consulting LiqPay Extension for Magento 2
 LiqPay payment integration extension for Magento 2.
 
 Check out the [Wiki pages](https://github.com/mcspronko/liqpay-magento2/wiki) for the project details.
-
-# Idea
-The idea of this repository and contribution is to learn how to create payment integrations for Magento 2. Each and everyone can contribute.
 
 ## About LiqPay
 Liqpay – is a payment system that allows easily send money from Visa or MasterCard cards to virtual account in Liqpay system linked to a mobile phone (cell phone) number. Later on you may send money to other phone numbers, withdraw money from Liqpay system to your card or leave money at your account and use it later.
@@ -77,7 +74,7 @@ modman update liqpay-magento2
 
 # Contributors
 
-* Vitaliy Prokopov
+* See [Contributors](https://github.com/mcspronko/liqpay-magento2/graphs/contributors) page.
 
 # License
 LiqPay extension for Magento 2 is licensed under the MIT License - see the LICENSE file for details
